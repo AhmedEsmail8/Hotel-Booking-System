@@ -11,12 +11,15 @@ namespace Hotel_Booking_System
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        public static Form1 sign_in;
         [STAThread]
+        
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            sign_in = new Form1();
+            Application.Run(sign_in);
         }
     }
 }

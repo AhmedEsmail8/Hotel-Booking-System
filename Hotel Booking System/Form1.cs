@@ -14,14 +14,19 @@ namespace Hotel_Booking_System
 {
     public partial class Form1 : Form
     {
+        private User user;
+        OracleConnection conn;
         public Form1()
         {
+            conn = new OracleConnection("Data source=orcl;User Id=scott; Password = tiger;");
+            conn.Open();
+            user = new User(conn);
             InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+           
         }
 
         private void Form1_Load_1(object sender, EventArgs e)
@@ -30,7 +35,6 @@ namespace Hotel_Booking_System
             head1.BackColor = Color.Transparent;
             head2.Parent = pictureBox1;
             head2.BackColor = Color.Transparent;
-            //button2.UseVisualStyleBackColor = true;
             login_btn.Parent = pictureBox1;
             login_btn.BackColor = Color.FromArgb(125, Color.White);
             signup_btn.Parent = pictureBox1;
@@ -72,6 +76,41 @@ namespace Hotel_Booking_System
         private void login_label_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void signup_submit_Click(object sender, EventArgs e)
+        {
+            if (!user.register(f_name_box.Text, l_name_box.Text, ssn_box.Text, email_box2.Text, pass_box2.Text))
+                MessageBox.Show("ACCOUNT NOT CREATED");
+            else
+            {
+                if (user.type == false)
+                {
+                    Hide();
+                    home obj = new home(user, conn);
+                    obj.Show();
+                }
+            }
+        }
+
+        private void login_submit_Click(object sender, EventArgs e)
+        {
+            if (!user.login(email_box.Text, pass_box.Text))
+                MessageBox.Show("NO ACCOUNT!!"+pass_box.Text);
+            else
+            {
+                if (user.type == false)
+                {
+                    Hide();
+                    home obj = new home(user, conn);
+                    obj.Show();
+                }
+            }
         }
     }
 }
