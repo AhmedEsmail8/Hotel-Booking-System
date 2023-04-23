@@ -101,7 +101,7 @@ namespace Hotel_Booking_System
         private void login_submit_Click(object sender, EventArgs e)
         {
             if (!user.login(email_box.Text, pass_box.Text))
-                MessageBox.Show("NO ACCOUNT!!"+pass_box.Text);
+                MessageBox.Show("NO ACCOUNT!!" + pass_box.Text);
             else
             {
                 if (user.type == false)

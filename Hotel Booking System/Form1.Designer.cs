@@ -71,7 +71,7 @@ namespace Hotel_Booking_System
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, -4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1682, 1080);
+            this.pictureBox1.Size = new System.Drawing.Size(1922, 1080);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -84,7 +84,7 @@ namespace Hotel_Booking_System
             this.head1.BackColor = System.Drawing.Color.Transparent;
             this.head1.Font = new System.Drawing.Font("Century Gothic", 43.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.head1.ForeColor = System.Drawing.Color.White;
-            this.head1.Location = new System.Drawing.Point(31, 160);
+            this.head1.Location = new System.Drawing.Point(35, 160);
             this.head1.Name = "head1";
             this.head1.Size = new System.Drawing.Size(777, 170);
             this.head1.TabIndex = 1;
@@ -99,7 +99,7 @@ namespace Hotel_Booking_System
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(38, 210);
+            this.label2.Location = new System.Drawing.Point(43, 210);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 39);
             this.label2.TabIndex = 2;
@@ -113,7 +113,7 @@ namespace Hotel_Booking_System
             this.head2.BackColor = System.Drawing.Color.Transparent;
             this.head2.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.head2.ForeColor = System.Drawing.Color.White;
-            this.head2.Location = new System.Drawing.Point(38, 364);
+            this.head2.Location = new System.Drawing.Point(43, 364);
             this.head2.Name = "head2";
             this.head2.Size = new System.Drawing.Size(748, 49);
             this.head2.TabIndex = 6;
@@ -126,9 +126,9 @@ namespace Hotel_Booking_System
             this.login_btn.BackColor = System.Drawing.Color.Transparent;
             this.login_btn.FlatAppearance.BorderSize = 0;
             this.login_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.login_btn.Location = new System.Drawing.Point(1318, 41);
+            this.login_btn.Location = new System.Drawing.Point(1506, 41);
             this.login_btn.Name = "login_btn";
-            this.login_btn.Size = new System.Drawing.Size(111, 44);
+            this.login_btn.Size = new System.Drawing.Size(127, 44);
             this.login_btn.TabIndex = 8;
             this.login_btn.Text = "Login";
             this.login_btn.UseVisualStyleBackColor = false;
@@ -140,9 +140,9 @@ namespace Hotel_Booking_System
             this.signup_btn.BackColor = System.Drawing.Color.Transparent;
             this.signup_btn.FlatAppearance.BorderSize = 0;
             this.signup_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.signup_btn.Location = new System.Drawing.Point(1481, 41);
+            this.signup_btn.Location = new System.Drawing.Point(1693, 41);
             this.signup_btn.Name = "signup_btn";
-            this.signup_btn.Size = new System.Drawing.Size(111, 44);
+            this.signup_btn.Size = new System.Drawing.Size(127, 44);
             this.signup_btn.TabIndex = 9;
             this.signup_btn.Text = "Sign Up";
             this.signup_btn.UseVisualStyleBackColor = false;
@@ -158,9 +158,9 @@ namespace Hotel_Booking_System
             this.login_panel.Controls.Add(this.login_label);
             this.login_panel.Controls.Add(this.email_box);
             this.login_panel.Controls.Add(this.username_login);
-            this.login_panel.Location = new System.Drawing.Point(529, 259);
+            this.login_panel.Location = new System.Drawing.Point(605, 259);
             this.login_panel.Name = "login_panel";
-            this.login_panel.Size = new System.Drawing.Size(537, 496);
+            this.login_panel.Size = new System.Drawing.Size(614, 496);
             this.login_panel.TabIndex = 10;
             // 
             // login_submit
@@ -170,9 +170,9 @@ namespace Hotel_Booking_System
             this.login_submit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.login_submit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.login_submit.ForeColor = System.Drawing.Color.Black;
-            this.login_submit.Location = new System.Drawing.Point(220, 395);
+            this.login_submit.Location = new System.Drawing.Point(251, 395);
             this.login_submit.Name = "login_submit";
-            this.login_submit.Size = new System.Drawing.Size(108, 49);
+            this.login_submit.Size = new System.Drawing.Size(123, 49);
             this.login_submit.TabIndex = 6;
             this.login_submit.Text = "Login";
             this.login_submit.UseVisualStyleBackColor = false;
@@ -184,7 +184,7 @@ namespace Hotel_Booking_System
             this.password.BackColor = System.Drawing.Color.Transparent;
             this.password.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.password.ForeColor = System.Drawing.Color.White;
-            this.password.Location = new System.Drawing.Point(61, 279);
+            this.password.Location = new System.Drawing.Point(70, 279);
             this.password.Name = "password";
             this.password.Size = new System.Drawing.Size(155, 36);
             this.password.TabIndex = 5;
@@ -193,10 +193,10 @@ namespace Hotel_Booking_System
             // pass_box
             // 
             this.pass_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pass_box.Location = new System.Drawing.Point(245, 282);
+            this.pass_box.Location = new System.Drawing.Point(280, 282);
             this.pass_box.Name = "pass_box";
             this.pass_box.PasswordChar = '*';
-            this.pass_box.Size = new System.Drawing.Size(234, 34);
+            this.pass_box.Size = new System.Drawing.Size(267, 34);
             this.pass_box.TabIndex = 4;
             // 
             // email_signin_label
@@ -205,7 +205,7 @@ namespace Hotel_Booking_System
             this.email_signin_label.BackColor = System.Drawing.Color.Transparent;
             this.email_signin_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.email_signin_label.ForeColor = System.Drawing.Color.White;
-            this.email_signin_label.Location = new System.Drawing.Point(61, 200);
+            this.email_signin_label.Location = new System.Drawing.Point(70, 200);
             this.email_signin_label.Name = "email_signin_label";
             this.email_signin_label.Size = new System.Drawing.Size(93, 36);
             this.email_signin_label.TabIndex = 3;
@@ -217,7 +217,7 @@ namespace Hotel_Booking_System
             this.login_label.BackColor = System.Drawing.Color.Transparent;
             this.login_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.login_label.ForeColor = System.Drawing.Color.White;
-            this.login_label.Location = new System.Drawing.Point(56, 71);
+            this.login_label.Location = new System.Drawing.Point(64, 71);
             this.login_label.Name = "login_label";
             this.login_label.Size = new System.Drawing.Size(180, 69);
             this.login_label.TabIndex = 2;
@@ -227,16 +227,16 @@ namespace Hotel_Booking_System
             // email_box
             // 
             this.email_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.email_box.Location = new System.Drawing.Point(245, 205);
+            this.email_box.Location = new System.Drawing.Point(280, 205);
             this.email_box.Name = "email_box";
-            this.email_box.Size = new System.Drawing.Size(234, 34);
+            this.email_box.Size = new System.Drawing.Size(267, 34);
             this.email_box.TabIndex = 1;
             this.email_box.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // username_login
             // 
             this.username_login.AutoSize = true;
-            this.username_login.Location = new System.Drawing.Point(88, 137);
+            this.username_login.Location = new System.Drawing.Point(101, 137);
             this.username_login.Name = "username_login";
             this.username_login.Size = new System.Drawing.Size(0, 17);
             this.username_login.TabIndex = 0;
@@ -257,9 +257,9 @@ namespace Hotel_Booking_System
             this.register_panel.Controls.Add(this.register_label);
             this.register_panel.Controls.Add(this.f_name_box);
             this.register_panel.Controls.Add(this.label5);
-            this.register_panel.Location = new System.Drawing.Point(529, 160);
+            this.register_panel.Location = new System.Drawing.Point(605, 160);
             this.register_panel.Name = "register_panel";
-            this.register_panel.Size = new System.Drawing.Size(537, 793);
+            this.register_panel.Size = new System.Drawing.Size(614, 793);
             this.register_panel.TabIndex = 11;
             // 
             // signup_submit
@@ -270,9 +270,9 @@ namespace Hotel_Booking_System
             this.signup_submit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.signup_submit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signup_submit.ForeColor = System.Drawing.Color.Black;
-            this.signup_submit.Location = new System.Drawing.Point(198, 649);
+            this.signup_submit.Location = new System.Drawing.Point(226, 649);
             this.signup_submit.Name = "signup_submit";
-            this.signup_submit.Size = new System.Drawing.Size(139, 49);
+            this.signup_submit.Size = new System.Drawing.Size(159, 49);
             this.signup_submit.TabIndex = 6;
             this.signup_submit.Text = "Sign Up";
             this.signup_submit.UseVisualStyleBackColor = false;
@@ -284,7 +284,7 @@ namespace Hotel_Booking_System
             this.last_name_label.BackColor = System.Drawing.Color.Transparent;
             this.last_name_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.last_name_label.ForeColor = System.Drawing.Color.White;
-            this.last_name_label.Location = new System.Drawing.Point(45, 264);
+            this.last_name_label.Location = new System.Drawing.Point(51, 264);
             this.last_name_label.Name = "last_name_label";
             this.last_name_label.Size = new System.Drawing.Size(165, 36);
             this.last_name_label.TabIndex = 12;
@@ -293,9 +293,9 @@ namespace Hotel_Booking_System
             // email_box2
             // 
             this.email_box2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.email_box2.Location = new System.Drawing.Point(251, 436);
+            this.email_box2.Location = new System.Drawing.Point(287, 436);
             this.email_box2.Name = "email_box2";
-            this.email_box2.Size = new System.Drawing.Size(234, 34);
+            this.email_box2.Size = new System.Drawing.Size(267, 34);
             this.email_box2.TabIndex = 11;
             // 
             // first_name_label
@@ -304,7 +304,7 @@ namespace Hotel_Booking_System
             this.first_name_label.BackColor = System.Drawing.Color.Transparent;
             this.first_name_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.first_name_label.ForeColor = System.Drawing.Color.White;
-            this.first_name_label.Location = new System.Drawing.Point(45, 181);
+            this.first_name_label.Location = new System.Drawing.Point(51, 181);
             this.first_name_label.Name = "first_name_label";
             this.first_name_label.Size = new System.Drawing.Size(168, 36);
             this.first_name_label.TabIndex = 10;
@@ -313,9 +313,9 @@ namespace Hotel_Booking_System
             // ssn_box
             // 
             this.ssn_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ssn_box.Location = new System.Drawing.Point(251, 348);
+            this.ssn_box.Location = new System.Drawing.Point(287, 348);
             this.ssn_box.Name = "ssn_box";
-            this.ssn_box.Size = new System.Drawing.Size(234, 34);
+            this.ssn_box.Size = new System.Drawing.Size(267, 34);
             this.ssn_box.TabIndex = 9;
             // 
             // ssn
@@ -324,7 +324,7 @@ namespace Hotel_Booking_System
             this.ssn.BackColor = System.Drawing.Color.Transparent;
             this.ssn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ssn.ForeColor = System.Drawing.Color.White;
-            this.ssn.Location = new System.Drawing.Point(45, 345);
+            this.ssn.Location = new System.Drawing.Point(51, 345);
             this.ssn.Name = "ssn";
             this.ssn.Size = new System.Drawing.Size(80, 36);
             this.ssn.TabIndex = 8;
@@ -333,10 +333,10 @@ namespace Hotel_Booking_System
             // pass_box2
             // 
             this.pass_box2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pass_box2.Location = new System.Drawing.Point(251, 521);
+            this.pass_box2.Location = new System.Drawing.Point(287, 521);
             this.pass_box2.Name = "pass_box2";
             this.pass_box2.PasswordChar = '*';
-            this.pass_box2.Size = new System.Drawing.Size(234, 34);
+            this.pass_box2.Size = new System.Drawing.Size(267, 34);
             this.pass_box2.TabIndex = 7;
             // 
             // password_register_labe
@@ -345,7 +345,7 @@ namespace Hotel_Booking_System
             this.password_register_labe.BackColor = System.Drawing.Color.Transparent;
             this.password_register_labe.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.password_register_labe.ForeColor = System.Drawing.Color.White;
-            this.password_register_labe.Location = new System.Drawing.Point(45, 521);
+            this.password_register_labe.Location = new System.Drawing.Point(51, 521);
             this.password_register_labe.Name = "password_register_labe";
             this.password_register_labe.Size = new System.Drawing.Size(155, 36);
             this.password_register_labe.TabIndex = 5;
@@ -354,9 +354,9 @@ namespace Hotel_Booking_System
             // l_name_box
             // 
             this.l_name_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l_name_box.Location = new System.Drawing.Point(251, 264);
+            this.l_name_box.Location = new System.Drawing.Point(287, 264);
             this.l_name_box.Name = "l_name_box";
-            this.l_name_box.Size = new System.Drawing.Size(234, 34);
+            this.l_name_box.Size = new System.Drawing.Size(267, 34);
             this.l_name_box.TabIndex = 4;
             // 
             // email_register_label
@@ -365,7 +365,7 @@ namespace Hotel_Booking_System
             this.email_register_label.BackColor = System.Drawing.Color.Transparent;
             this.email_register_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.email_register_label.ForeColor = System.Drawing.Color.White;
-            this.email_register_label.Location = new System.Drawing.Point(45, 433);
+            this.email_register_label.Location = new System.Drawing.Point(51, 433);
             this.email_register_label.Name = "email_register_label";
             this.email_register_label.Size = new System.Drawing.Size(93, 36);
             this.email_register_label.TabIndex = 3;
@@ -377,7 +377,7 @@ namespace Hotel_Booking_System
             this.register_label.BackColor = System.Drawing.Color.Transparent;
             this.register_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.register_label.ForeColor = System.Drawing.Color.White;
-            this.register_label.Location = new System.Drawing.Point(42, 50);
+            this.register_label.Location = new System.Drawing.Point(48, 50);
             this.register_label.Name = "register_label";
             this.register_label.Size = new System.Drawing.Size(260, 69);
             this.register_label.TabIndex = 2;
@@ -387,24 +387,24 @@ namespace Hotel_Booking_System
             // f_name_box
             // 
             this.f_name_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.f_name_box.Location = new System.Drawing.Point(251, 185);
+            this.f_name_box.Location = new System.Drawing.Point(287, 185);
             this.f_name_box.Name = "f_name_box";
-            this.f_name_box.Size = new System.Drawing.Size(234, 34);
+            this.f_name_box.Size = new System.Drawing.Size(267, 34);
             this.f_name_box.TabIndex = 1;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(88, 137);
+            this.label5.Location = new System.Drawing.Point(101, 137);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(0, 17);
             this.label5.TabIndex = 0;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1664, 1033);
+            this.ClientSize = new System.Drawing.Size(1902, 1033);
             this.Controls.Add(this.register_panel);
             this.Controls.Add(this.login_panel);
             this.Controls.Add(this.signup_btn);
