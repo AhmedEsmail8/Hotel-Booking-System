@@ -14,12 +14,8 @@ namespace Hotel_Booking_System
 {
     public partial class home : Form
     {
-        User user;
-        OracleConnection conn;
-        public home(User user, OracleConnection conn)
+        public home()
         {
-            this.user = user;
-            this.conn = conn;
             InitializeComponent();
         }
         private void home_Load(object sender, EventArgs e)
@@ -29,14 +25,17 @@ namespace Hotel_Booking_System
 
         private void roomsItems()
         {
-            roomsList[] listItems = new roomsList[20];
-            for (int i = 0; i < listItems.Length; i++)
+            List<Room> rooms = Room.getRooms();
+            foreach (Room room in rooms)
             {
-                listItems[i] = new roomsList();
-                listItems[i].Title = "room" + i + "title";
-                listItems[i].Description = "room" + i + "description";
-                                
-                flowLayoutPanel1.Controls.Add(listItems[i]);
+                if (room.available == "yes")
+                {
+                    roomsList obj = new roomsList();
+                    obj.Title = room.room_no.ToString();
+                    obj.Description = room.description;
+                    obj.Photo = Image.FromFile(room.photo.Replace('\\', '/'));
+                    flowLayoutPanel1.Controls.Add(obj);
+                }
             }
         }
 

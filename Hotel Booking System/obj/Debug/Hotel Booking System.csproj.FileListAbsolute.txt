@@ -18,6 +18,7 @@ D:\Projects\Software\Hotel Booking System\Hotel Booking System\obj\Debug\Hotel B
 D:\Projects\Software\Hotel Booking System\Hotel Booking System\obj\Debug\Hotel Booking System.csproj.CopyComplete
 D:\Projects\Software\Hotel Booking System\Hotel Booking System\obj\Debug\Hotel Booking System.exe
 D:\Projects\Software\Hotel Booking System\Hotel Booking System\obj\Debug\Hotel Booking System.pdb
-D:\Projects\Software\Hotel Booking System\Hotel Booking System\obj\Debug\Hotel Booking System.csproj.AssemblyReference.cache
 D:\SW_project\Hotel-Booking-System\Hotel Booking System\obj\Debug\Hotel_Booking_System.home.resources
 D:\SW_project\Hotel-Booking-System\Hotel Booking System\obj\Debug\Hotel_Booking_System.roomsList.resources
+D:\Projects\Software\Hotel Booking System\Hotel Booking System\obj\Debug\Hotel_Booking_System.roomsList.resources
+D:\Projects\Software\Hotel Booking System\Hotel Booking System\obj\Debug\Hotel Booking System.csproj.AssemblyReference.cache

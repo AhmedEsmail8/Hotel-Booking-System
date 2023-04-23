@@ -13,7 +13,7 @@ namespace Hotel_Booking_System
         string card_no, name, guest_id;
         int ccv;
     }
-    public class User
+    public  class User
     {
         public string f_name, l_name, ssn, email, phone_number, password;
         OracleConnection conn;

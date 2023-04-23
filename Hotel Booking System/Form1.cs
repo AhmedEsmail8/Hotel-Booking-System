@@ -15,12 +15,9 @@ namespace Hotel_Booking_System
     public partial class Form1 : Form
     {
         private User user;
-        OracleConnection conn;
         public Form1()
         {
-            conn = new OracleConnection("Data source=orcl;User Id=scott; Password = tiger;");
-            conn.Open();
-            user = new User(conn);
+            user = new User(Program.conn);
             InitializeComponent();
         }
 
@@ -92,7 +89,7 @@ namespace Hotel_Booking_System
                 if (user.type == false)
                 {
                     Hide();
-                    home obj = new home(user, conn);
+                    home obj = new home();
                     obj.Show();
                 }
             }
@@ -107,7 +104,7 @@ namespace Hotel_Booking_System
                 if (user.type == false)
                 {
                     Hide();
-                    home obj = new home(user, conn);
+                    home obj = new home();
                     obj.Show();
                 }
             }
