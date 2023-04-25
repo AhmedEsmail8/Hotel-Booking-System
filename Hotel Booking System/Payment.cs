@@ -27,6 +27,14 @@ namespace Hotel_Booking_System
         private void Payment_Load(object sender, EventArgs e)
         {
             this.ShowInTaskbar = false;
+            length = 1;
+
+            //monthCalendar1.MaxSelectionCount = 2;
+            //monthCalendar1.SelectionRange.Start = ;
+            monthCalendar1.SetSelectionRange(DateTime.Now, DateTime.Now.AddDays(3));
+            //monthCalendar1.SetDate(DateTime.Now);
+            //monthCalendar1.SetDate(DateTime.Now.AddDays(2));
+            //monthCalendar1.SelectionRange.End = ;
 
             view_label.Parent = pictureBox1;
             view_label.BackColor = Color.Transparent;
@@ -67,11 +75,33 @@ namespace Hotel_Booking_System
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if (textBox1.TextLength == 4 || textBox1.TextLength == 9 || textBox1.TextLength == 14)
+            if (length == 4 && textBox1.TextLength < 16)
             {
                 //Console.WriteLine(textBox1.TextLength);
+                length = -1;
                 textBox1.AppendText("-");
+                
             }
+            length++;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            home obj = new home();
+            obj.Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            home obj = new home();
+            obj.Show();
+            this.Hide();
+        }
+
+        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
+        {
+
         }
     }
 }
