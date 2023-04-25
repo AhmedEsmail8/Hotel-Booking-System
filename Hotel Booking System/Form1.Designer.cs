@@ -195,9 +195,9 @@ namespace Hotel_Booking_System
             this.pass_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pass_box.Location = new System.Drawing.Point(280, 282);
             this.pass_box.Name = "pass_box";
-            this.pass_box.PasswordChar = '*';
             this.pass_box.Size = new System.Drawing.Size(267, 34);
             this.pass_box.TabIndex = 4;
+            this.pass_box.UseSystemPasswordChar = true;
             // 
             // email_signin_label
             // 
@@ -335,9 +335,9 @@ namespace Hotel_Booking_System
             this.pass_box2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pass_box2.Location = new System.Drawing.Point(287, 521);
             this.pass_box2.Name = "pass_box2";
-            this.pass_box2.PasswordChar = '*';
             this.pass_box2.Size = new System.Drawing.Size(267, 34);
             this.pass_box2.TabIndex = 7;
+            this.pass_box2.UseSystemPasswordChar = true;
             // 
             // password_register_labe
             // 
@@ -416,8 +416,9 @@ namespace Hotel_Booking_System
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "BookMyStay\n";
+            this.Text = "Book My Stay\n";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load_1);
             this.SizeChanged += new System.EventHandler(this.Form1_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

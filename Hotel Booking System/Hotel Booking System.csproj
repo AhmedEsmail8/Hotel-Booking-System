@@ -50,11 +50,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EditUserInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditUserInfo.Designer.cs">
+      <DependentUpon>EditUserInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="home.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="home.Designer.cs">
       <DependentUpon>home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment.Designer.cs">
+      <DependentUpon>Payment.cs</DependentUpon>
     </Compile>
     <Compile Include="Room.cs" />
     <Compile Include="roomsList.cs">
@@ -62,6 +74,9 @@
     </Compile>
     <Compile Include="roomsList.Designer.cs">
       <DependentUpon>roomsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoundedPictureBox.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="User.cs" />
     <Compile Include="Form1.cs">
@@ -75,11 +90,17 @@
     <Compile Include="RJButton .cs">
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="EditUserInfo.resx">
+      <DependentUpon>EditUserInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="home.resx">
       <DependentUpon>home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment.resx">
+      <DependentUpon>Payment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

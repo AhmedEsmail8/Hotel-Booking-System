@@ -117,4 +117,40 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        HQMAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="description.Text" xml:space="preserve">
+    <value>This room is amaizing perfect and hamasa and som3a and 3b3z and himida and me and kamakl and kamal and me and hamasa and himida and me and kamakl and kamal and me and hamasa and himida and me and kamakl and kamal and me and hamasa and himida and me and kamakl and kamal and me and hamasa</value>
+  </data>
 </root>

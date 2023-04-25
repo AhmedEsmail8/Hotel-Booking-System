@@ -28,6 +28,7 @@ namespace Hotel_Booking_System
 
         private void Form1_Load_1(object sender, EventArgs e)
         {
+            this.ShowInTaskbar = false;
             head1.Parent = pictureBox1;
             head1.BackColor = Color.Transparent;
             head2.Parent = pictureBox1;
@@ -108,6 +109,11 @@ namespace Hotel_Booking_System
                     obj.Show();
                 }
             }
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
         }
     }
 }

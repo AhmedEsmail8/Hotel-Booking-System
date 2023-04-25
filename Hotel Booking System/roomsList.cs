@@ -16,16 +16,17 @@ namespace Hotel_Booking_System
         {
             InitializeComponent();
         }
+
         #region properties
-        private string _title;
+        private string _view;
         private string _decription;
         private Image _photo;
 
         [Category("Custom Props")]
-        public string Title
+        public string View
         {
-            get { return _title; }
-            set { _title = value; title.Text = value; }
+            get { return _view; }
+            set { _view = value; view.Text = value; }
         }
 
         [Category("Custom Props")]
@@ -46,7 +47,19 @@ namespace Hotel_Booking_System
 
         private void roomsList_Load(object sender, EventArgs e)
         {
+            
+        }
 
+        private void description_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.ParentForm.Hide();
+            Payment p = new Payment();
+            p.Show();
         }
     }
 }
