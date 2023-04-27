@@ -8,10 +8,11 @@ using Oracle.DataAccess.Types;
 
 namespace Hotel_Booking_System
 {
-    class Reservation
+    public class Reservation
     {
         public string res_id, start_date, end_date, payment_method, room_no;
         public User guest;
+        public Room room;
         public Reservation()
         {
             OracleCommand cmd = new OracleCommand("SELECT MAX(res_id) FROM reservations", Program.conn);
@@ -23,7 +24,7 @@ namespace Hotel_Booking_System
                 else
                     res_id = (Int16.Parse(dr[0].ToString()) + 1).ToString();
             }
-                
+            guest = Program.user;
         }
 
         public Reservation(string res_id)
@@ -39,6 +40,7 @@ namespace Hotel_Booking_System
                 payment_method = dr[3].ToString();
                 room_no = dr[4].ToString();
                 guest = new User(dr[5].ToString());
+                room = new Room(room_no);
             }
         }
         
@@ -52,6 +54,32 @@ namespace Hotel_Booking_System
             cmd.Parameters.Add("room", room_no);
             cmd.Parameters.Add("guest_id", guest.ssn);
             cmd.ExecuteNonQuery();
+
+            OracleCommand cmd2 = new OracleCommand("INSERT INTO pending_reservations VALUES(:id, :res)", Program.conn);
+            cmd2.Parameters.Add("id", guest.ssn);
+            cmd2.Parameters.Add("res", res_id);
+            cmd2.ExecuteNonQuery();
+        }
+
+        public bool update(string start_date, string end_date)
+        {
+            try
+            {
+                OracleCommand cmd = new OracleCommand("UDATE reservations SET start_date = :st, end_date = :end WHERE res_id = :id", Program.conn);
+                cmd.Parameters.Add("st", start_date);
+                cmd.Parameters.Add("end", end_date);
+                cmd.Parameters.Add("id", res_id);
+                int r = cmd.ExecuteNonQuery();
+                if (r == -1)
+                    return false;
+            }
+            catch(Exception ex)
+            {
+                return false;
+            }
+            this.start_date = start_date;
+            this.end_date = end_date;
+            return true;
         }
     }
 }

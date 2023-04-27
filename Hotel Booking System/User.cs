@@ -21,7 +21,7 @@ namespace Hotel_Booking_System
         List<credit_card> credit_cards = new List<credit_card>();
 
         // false--> guest
-        // true--> Admin
+        // true--> receptionist
         public bool type;
         public User(OracleConnection conn)
         {
@@ -59,7 +59,7 @@ namespace Hotel_Booking_System
                 OracleCommand cmd = new OracleCommand();
                 cmd.Connection = conn;
                 string txt;
-                if (email.Substring(email.Length - 10, 10) == "@Admin.com")
+                if (email.Length >= 10 && email.Substring(email.Length - 10, 10) == "@admin.com")
                 {
                     type = true;
                     txt = "SELECT * FROM receptionists WHERE email = :e AND password = :p";
@@ -112,7 +112,7 @@ namespace Hotel_Booking_System
                 string txt;
                 string workingDirectory = Environment.CurrentDirectory;
                 string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
-                if (email.Substring(email.Length - 10, 10) == "@admin.com")
+                if (email.Length>=10 && email.Substring(email.Length - 10, 10) == "@admin.com")
                 {
                     type = true;
                     txt = "INSERT INTO receptionists VALUES(:a, :b, :c, :d, :e, :f, :g)";

@@ -12,6 +12,7 @@ namespace Hotel_Booking_System
 {
     public partial class notification : UserControl
     {
+        public Reservation reservation;
         public notification()
         {
             InitializeComponent();

@@ -67,7 +67,6 @@ namespace Hotel_Booking_System
             Program.reservation.end_date = end_date;
             Program.reservation.guest = Program.user;
             Program.reservation.room_no = room_no;
-            Console.WriteLine(Program.reservation.room_no + "  " + Program.reservation.start_date + "  " + Program.reservation.end_date);
             Program.payment.handle();
             Program.payment.Show();
         }

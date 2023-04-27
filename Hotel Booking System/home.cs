@@ -129,20 +129,15 @@ namespace Hotel_Booking_System
                 string x = CultureInfo.CurrentCulture.DateTimeFormat.GetAbbreviatedMonthName(check_in_date.Value.Month).ToUpper(), y = CultureInfo.CurrentCulture.DateTimeFormat.GetAbbreviatedMonthName(check_out_date.Value.Month).ToUpper();
                 string start_date = check_in_date.Value.Day.ToString() + "-" + x + "-" + check_in_date.Value.Year.ToString();
                 string end_date = check_out_date.Value.Day.ToString() + "-" + y + "-" + check_out_date.Value.Year.ToString();
-                if (comboBox1.SelectedItem == null || min_price_txt.Text.Length==0 || max_price_txt.Text.Length==0 || textBox3.Text.Length==0 || int.Parse(min_price_txt.Text) > int.Parse(max_price_txt.Text))
+                if (Int32.Parse(min_price_txt.Text)<0 || Int32.Parse(max_price_txt.Text)<0 || comboBox1.SelectedItem == null || min_price_txt.Text.Length == 0 || max_price_txt.Text.Length == 0 || textBox3.Text.Length == 0 || int.Parse(min_price_txt.Text) > int.Parse(max_price_txt.Text))
                 {
                     MessageBox.Show("Please, enter valid data.");
                     return;
                 }
-                List<Room> rooms = Room.search(min_price_txt.Text, max_price_txt.Text, start_date, end_date, textBox3.Text, comboBox1.SelectedItem.ToString());
+                List<Room> rooms = Room.search(Int32.Parse(min_price_txt.Text).ToString(), Int32.Parse(max_price_txt.Text).ToString(), start_date, end_date, textBox3.Text, comboBox1.SelectedItem.ToString());
                 if (rooms == null)
                 {
                     MessageBox.Show("Please, enter valid data.");
-                    return;
-                }
-                if (rooms.Count == 0)
-                {
-                    MessageBox.Show("Sorry, no matching rooms");
                     return;
                 }
                 flowLayoutPanel1.Controls.Clear();
@@ -167,7 +162,7 @@ namespace Hotel_Booking_System
                     flowLayoutPanel1.Controls.Add(obj);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Please, enter valid data.");
             }

@@ -112,15 +112,16 @@ namespace Hotel_Booking_System
                     Program.reservation.save();
                     OracleCommand cmd = new OracleCommand("INSERT INTO credit_cards VALUES(:num, :res, :cvv, :guest)", Program.conn);
                     cmd.Parameters.Add("num", textBox1.Text.ToString());
-                    cmd.Parameters.Add("res", Program.reservation.res_id);
                     cmd.Parameters.Add("cvv", textBox2.Text.ToString());
                     cmd.Parameters.Add("guest_id", Program.user.ssn);
+                    cmd.Parameters.Add("res", Program.reservation.res_id);                  
+                    //Console.WriteLine("card_no = "+ textBox1.Text.ToString()+" res_id = "+ Program.reservation.res_id+" cvv = "+ textBox2.Text.ToString()+" ssn = "+ Program.user.ssn);
                     int r = cmd.ExecuteNonQuery();
+                    
                     if (r == -1)
                         MessageBox.Show("There is a problem, please try again");
                     else
                     {
-                        Program.reservation.save();
                         Hide();
                         Program.home.Show();
                     }
@@ -128,14 +129,14 @@ namespace Hotel_Booking_System
                 else if (radioButton2.Checked)
                 {
                     Program.reservation.payment_method = "cash";
-                    Program.reservation.save();
                     Hide();
                     Program.home.Show();
                 }
+                
             }
             catch(Exception ex)
             {
-                MessageBox.Show("There is a problem, please try again");
+                MessageBox.Show("There is a problem, please try again   "+ex.Message);
             }
             //Program.reservation.save();
         }

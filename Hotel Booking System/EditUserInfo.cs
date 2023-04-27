@@ -145,7 +145,7 @@ namespace Hotel_Booking_System
         {
             
             if (Program.user.update(f_name_txt.Text, l_name_txt.Text, phone_number_txt.Text, email_txt.Text, password_txt.Text, roundedPictureBox1.ImageLocation))
-                MessageBox.Show("You Changes Saved Succefully");
+                MessageBox.Show("Your Changes Saved Succefully");
             else
                 MessageBox.Show("Something Went Wrong While Saving Your Changes, Please Try Again");
         }

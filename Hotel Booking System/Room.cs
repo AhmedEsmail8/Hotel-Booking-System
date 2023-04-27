@@ -9,13 +9,30 @@ using Oracle.DataAccess.Types;
 
 namespace Hotel_Booking_System
 {
-    class Room
+    public class Room
     {
         public int room_no, no_of_beds, price;
         public string description, view, available, photo;
         public Room()
         {
 
+        }
+
+        public Room(string num)
+        {
+            OracleCommand cmd = new OracleCommand("SELECT * FROM rooms WHERE room_no = :n", Program.conn);
+            cmd.Parameters.Add("n", num);
+            OracleDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                room_no = Int16.Parse(num);
+                description = dr[1].ToString();
+                no_of_beds = Int16.Parse(dr[2].ToString());
+                view = dr[3].ToString();
+                price = Int16.Parse(dr[4].ToString());
+                available = dr[5].ToString();
+                photo = dr[6].ToString().Replace("\\", "/");
+            }
         }
 
         public static List<Room> getRooms()
@@ -40,7 +57,7 @@ namespace Hotel_Booking_System
             }
             catch(Exception e)
             {
-                Console.WriteLine(e.Message);
+                
             }
             return rooms;
         }
