@@ -20,6 +20,7 @@ namespace Hotel_Booking_System
         public static home home;
         public static Payment payment;
         public static EditUserInfo editUserInfo;
+        public static reservationsList reservationslist;
         [STAThread]
         
         static void Main()
@@ -34,6 +35,7 @@ namespace Hotel_Booking_System
             home = new home();
             payment = new Payment();
             editUserInfo = new EditUserInfo();
+            reservationslist = new reservationsList();
             Application.Run(sign_in);
         }
     }

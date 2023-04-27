@@ -44,7 +44,7 @@ namespace Hotel_Booking_System
             TimeSpan days = Program.home.check_out_date.Value.Date.Subtract(Program.home.check_in_date.Value.Date);
             Console.WriteLine("days = "+ Program.home.check_out_date.Value.Date.Subtract(Program.home.check_in_date.Value.Date));
 
-            monthCalendar1.SetSelectionRange(DateTime.Now, DateTime.Now.AddDays(3));
+            monthCalendar1.SetSelectionRange(Program.home.check_in_date.Value, Program.home.check_out_date.Value);
 
             label4.Parent = pictureBox1;
             label4.BackColor = Color.Transparent;
@@ -69,18 +69,20 @@ namespace Hotel_Booking_System
 
         private void Payment_Load(object sender, EventArgs e)
         {
-            this.ShowInTaskbar = false;
-
             view_label.Parent = pictureBox1;
             view_label.BackColor = Color.Transparent;
 
             label2.Parent = pictureBox1;
             label2.BackColor = Color.Transparent;
 
-            
-
             label3.Parent = pictureBox1;
             label3.BackColor = Color.Transparent;
+
+            label7.Parent = pictureBox1;
+            label7.BackColor = Color.Transparent;
+
+            label8.Parent = pictureBox1;
+            label8.BackColor = Color.Transparent;
 
             handle();
         }
@@ -158,6 +160,16 @@ namespace Hotel_Booking_System
             textBox2.Show();
             label5.Show();
             label6.Show();
+        }
+
+        private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)
+        {
+            monthCalendar1.SetSelectionRange(Program.home.check_in_date.Value, Program.home.check_out_date.Value);
+        }
+
+        private void monthCalendar1_MouseCaptureChanged(object sender, EventArgs e)
+        {
+            monthCalendar1.SetSelectionRange(Program.home.check_in_date.Value, Program.home.check_out_date.Value);
         }
     }
 }

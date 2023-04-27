@@ -155,5 +155,11 @@ namespace Hotel_Booking_System
             Hide();
             Program.sign_in.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Program.reservationslist.Show();
+        }
     }
 }

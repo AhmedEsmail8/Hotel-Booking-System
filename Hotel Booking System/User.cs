@@ -100,6 +100,7 @@ namespace Hotel_Booking_System
                 return false;
             }
         }
+
         public bool register(string f_name, string l_name, string ssn, string email, string password)
         {
             try
@@ -109,10 +110,12 @@ namespace Hotel_Booking_System
                 OracleCommand cmd = new OracleCommand();
                 cmd.Connection = conn;
                 string txt;
-                if (email.Substring(email.Length - 10, 10) == "@Admin.com")
+                string workingDirectory = Environment.CurrentDirectory;
+                string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
+                if (email.Substring(email.Length - 10, 10) == "@admin.com")
                 {
                     type = true;
-                    txt = "INSERT INTO receptionists VALUES(:a, :b, :c, :d, :e, :f)";
+                    txt = "INSERT INTO receptionists VALUES(:a, :b, :c, :d, :e, :f, :g)";
                     cmd.CommandText = txt;
                     cmd.Parameters.Add("a", ssn);
                     cmd.Parameters.Add("b", f_name);
@@ -120,11 +123,12 @@ namespace Hotel_Booking_System
                     cmd.Parameters.Add("d", email);
                     cmd.Parameters.Add("f", password);
                     cmd.Parameters.Add("e", "0");
+                    cmd.Parameters.Add("g", projectDirectory.Replace('\\', '/') + "/Hotel Booking System/" + "profile_deafult.jpeg");
                 }
                 else
                 {
                     type = false;
-                    txt = "INSERT INTO guests VALUES(:a, :b, :c, :d, :e, :f)";
+                    txt = "INSERT INTO guests VALUES(:a, :b, :c, :d, :e, :f, :g)";
                     cmd.CommandText = txt;
                     cmd.Parameters.Add("a", ssn);
                     cmd.Parameters.Add("b", f_name);
@@ -132,13 +136,21 @@ namespace Hotel_Booking_System
                     cmd.Parameters.Add("d", email);
                     cmd.Parameters.Add("e", "0");
                     cmd.Parameters.Add("f", password);
+                    cmd.Parameters.Add("g", projectDirectory.Replace('\\', '/') + "/Hotel Booking System/" + "profile_deafult.jpeg");
                 }
                 int r = cmd.ExecuteNonQuery();
                 if (r == -1)
                     return false;
+                photo = projectDirectory.Replace('\\', '/') + "/Hotel Booking System/" + "profile_deafult.jpeg";
+                this.password = password;
+                phone_number = "0";
+                this.f_name = f_name;
+                this.l_name = l_name;
+                this.ssn = ssn;
+                this.email = email;
                 return true;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return false;
             }

@@ -22,10 +22,10 @@ namespace Hotel_Booking_System
         }
         private void home_Load(object sender, EventArgs e)
         {
-            this.ShowInTaskbar = false;
-
             sideBar.Hide();
+
             roomsItems();
+
             OracleCommand cmd = new OracleCommand("SELECT DISTINCT room_view FROM rooms", Program.conn);
             OracleDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
@@ -107,12 +107,14 @@ namespace Hotel_Booking_System
         {
             Hide();
             Program.sign_in.Show();
+            sideBar.Hide();
         }
 
         private void Account_info_Click(object sender, EventArgs e)
         {
             Hide();
             Program.editUserInfo.Show();
+            sideBar.Hide();
         }
 
         private void register_label_Click(object sender, EventArgs e)
@@ -127,7 +129,7 @@ namespace Hotel_Booking_System
                 string x = CultureInfo.CurrentCulture.DateTimeFormat.GetAbbreviatedMonthName(check_in_date.Value.Month).ToUpper(), y = CultureInfo.CurrentCulture.DateTimeFormat.GetAbbreviatedMonthName(check_out_date.Value.Month).ToUpper();
                 string start_date = check_in_date.Value.Day.ToString() + "-" + x + "-" + check_in_date.Value.Year.ToString();
                 string end_date = check_out_date.Value.Day.ToString() + "-" + y + "-" + check_out_date.Value.Year.ToString();
-                if (comboBox1.SelectedItem == null || min_price_txt.Text.Length==0 || max_price_txt.Text.Length==0 || textBox3.Text.Length==0)
+                if (comboBox1.SelectedItem == null || min_price_txt.Text.Length==0 || max_price_txt.Text.Length==0 || textBox3.Text.Length==0 || int.Parse(min_price_txt.Text) > int.Parse(max_price_txt.Text))
                 {
                     MessageBox.Show("Please, enter valid data.");
                     return;
@@ -136,6 +138,11 @@ namespace Hotel_Booking_System
                 if (rooms == null)
                 {
                     MessageBox.Show("Please, enter valid data.");
+                    return;
+                }
+                if (rooms.Count == 0)
+                {
+                    MessageBox.Show("Sorry, no matching rooms");
                     return;
                 }
                 flowLayoutPanel1.Controls.Clear();
@@ -172,6 +179,18 @@ namespace Hotel_Booking_System
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Program.reservationslist.Show();
+            sideBar.Hide();
+        }
+
+        private void Search_sideBar_Click(object sender, EventArgs e)
         {
 
         }

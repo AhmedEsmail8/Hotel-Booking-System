@@ -26,3 +26,5 @@ D:\SW_project\Hotel-Booking-System\Hotel Booking System\obj\Debug\Hotel_Booking_
 D:\SW_project\Hotel-Booking-System\Hotel Booking System\obj\Debug\Hotel_Booking_System.Payment.resources
 D:\Projects\Software\Hotel Booking System\Hotel Booking System\obj\Debug\Hotel_Booking_System.EditUserInfo.resources
 D:\Projects\Software\Hotel Booking System\Hotel Booking System\obj\Debug\Hotel_Booking_System.Payment.resources
+D:\SW_project\Hotel-Booking-System\Hotel Booking System\obj\Debug\Hotel_Booking_System.reservationsList.resources
+D:\SW_project\Hotel-Booking-System\Hotel Booking System\obj\Debug\Hotel_Booking_System.notification.resources

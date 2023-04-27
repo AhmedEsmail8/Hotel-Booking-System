@@ -68,7 +68,7 @@ namespace Hotel_Booking_System
             this.description.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.description.Location = new System.Drawing.Point(355, 80);
             this.description.Name = "description";
-            this.description.Size = new System.Drawing.Size(1090, 91);
+            this.description.Size = new System.Drawing.Size(1090, 103);
             this.description.TabIndex = 2;
             this.description.Text = resources.GetString("description.Text");
             this.description.Click += new System.EventHandler(this.description_Click);
@@ -97,7 +97,7 @@ namespace Hotel_Booking_System
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1661, 93);
+            this.label3.Location = new System.Drawing.Point(1664, 93);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 36);
             this.label3.TabIndex = 5;
@@ -125,7 +125,7 @@ namespace Hotel_Booking_System
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(148, 39);
             this.button1.TabIndex = 7;
-            this.button1.Text = "Reserve";
+            this.button1.Text = "Book";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -141,12 +141,12 @@ namespace Hotel_Booking_System
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.view);
             this.Controls.Add(this.description);
             this.Controls.Add(this.pictureBox1);

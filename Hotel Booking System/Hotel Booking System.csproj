@@ -62,6 +62,12 @@
     <Compile Include="home.Designer.cs">
       <DependentUpon>home.cs</DependentUpon>
     </Compile>
+    <Compile Include="notification.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="notification.Designer.cs">
+      <DependentUpon>notification.cs</DependentUpon>
+    </Compile>
     <Compile Include="Payment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +75,12 @@
       <DependentUpon>Payment.cs</DependentUpon>
     </Compile>
     <Compile Include="Reservation.cs" />
+    <Compile Include="reservationsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reservationsList.Designer.cs">
+      <DependentUpon>reservationsList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Room.cs" />
     <Compile Include="roomsList.cs">
       <SubType>UserControl</SubType>
@@ -100,6 +112,9 @@
     <EmbeddedResource Include="home.resx">
       <DependentUpon>home.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="notification.resx">
+      <DependentUpon>notification.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Payment.resx">
       <DependentUpon>Payment.cs</DependentUpon>
     </EmbeddedResource>
@@ -112,6 +127,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="reservationsList.resx">
+      <DependentUpon>reservationsList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="roomsList.resx">
       <DependentUpon>roomsList.cs</DependentUpon>
     </EmbeddedResource>
