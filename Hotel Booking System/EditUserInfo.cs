@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -34,6 +35,14 @@ namespace Hotel_Booking_System
         {
             isPass = true;
             sideBar.Hide();
+            SSN_txt.Text = Program.user.ssn;
+            f_name_txt.Text = Program.user.f_name;
+            l_name_txt.Text = Program.user.l_name;
+            email_txt.Text = Program.user.email;
+            phone_number_txt.Text = Program.user.phone_number;
+            password_txt.Text = Program.user.password;
+            roundedPictureBox1.ImageLocation = Program.user.photo.Replace('\\', '/');
+            password_txt.UseSystemPasswordChar = true;
         }
 
         private void L_name_label_Click(object sender, EventArgs e)
@@ -43,7 +52,9 @@ namespace Hotel_Booking_System
 
         private void roundedPictureBox3_Click(object sender, EventArgs e)
         {
-            roundedPictureBox1.ImageLocation = "D:/SW_project/Hotel-Booking-System/Hotel Booking System/profile_deafult.jpeg";
+            string workingDirectory = Environment.CurrentDirectory;
+            string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
+            roundedPictureBox1.ImageLocation = projectDirectory.Replace('\\', '/') + "/Hotel Booking System/" + "profile_deafult.jpeg";
         }
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
@@ -126,28 +137,23 @@ namespace Hotel_Booking_System
 
         private void Search_sideBar_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            home obj = new home();
-            obj.Show();
+            Hide();
+            Program.home.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
+            
+            if (Program.user.update(f_name_txt.Text, l_name_txt.Text, phone_number_txt.Text, email_txt.Text, password_txt.Text, roundedPictureBox1.ImageLocation))
                 MessageBox.Show("You Changes Saved Succefully");
-            }
-            catch (Exception ex) //don't print the exception for the user
-            {
+            else
                 MessageBox.Show("Something Went Wrong While Saving Your Changes, Please Try Again");
-            }
         }
 
         private void Logout_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form1 f = new Form1();
-            f.Show();
+            Hide();
+            Program.sign_in.Show();
         }
     }
 }

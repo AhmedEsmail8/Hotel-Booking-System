@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,7 +25,11 @@ namespace Hotel_Booking_System
             this.ShowInTaskbar = false;
 
             sideBar.Hide();
-            roomsItems();            
+            roomsItems();
+            OracleCommand cmd = new OracleCommand("SELECT DISTINCT room_view FROM rooms", Program.conn);
+            OracleDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+                comboBox1.Items.Add(dr[0].ToString());
 
             panel3.Parent = pictureBox1;
             panel3.BackColor = Color.Transparent;
@@ -46,26 +52,30 @@ namespace Hotel_Booking_System
 
         private void roomsItems()
         {
-            List<Room> rooms = Room.getRooms();
-            foreach (Room room in rooms)
-            {
-                if (room.available == "yes")
-                {
-                    roomsList obj = new roomsList();
-                    obj.View = room.view.ToString();
-                    obj.Description = room.description;
-                    try
-                    {
-                        obj.Photo = Image.FromFile(room.photo.Replace('\\', '/'));
-                    }
-                    catch(Exception error)
-                    {
-                        obj.Photo = Image.FromFile("D:/SW_project/Hotel-Booking-System/Hotel Booking System/deafult_image.png");
-                    }
-                    
-                    flowLayoutPanel1.Controls.Add(obj);
-                }
-            }
+            //List<Room> rooms = Room.getRooms();
+            //foreach (Room room in rooms)
+            //{
+            //    if (room.available == "yes")
+            //    {
+            //        roomsList obj = new roomsList();
+            //        obj.View = room.view.ToString();
+            //        obj.Description = room.description;
+            //        try
+            //        {
+            //            obj.Photo = Image.FromFile(room.photo.Replace('\\', '/'));
+            //        }
+            //        catch(Exception error)
+            //        {
+            //            string workingDirectory = Environment.CurrentDirectory;
+            //            string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
+            //            obj.Photo = Image.FromFile(projectDirectory.Replace('\\', '/') + "/Hotel Booking System/" + "deafult_image.png");
+            //        }
+            //        obj.label2.Text = room.no_of_beds.ToString();
+            //        obj.label4.Text = room.price.ToString();
+            //        obj.room_no = room.room_no.ToString();
+            //        flowLayoutPanel1.Controls.Add(obj);
+            //    }
+            //}
         }
 
         private void home_FormClosed(object sender, FormClosedEventArgs e)
@@ -95,19 +105,73 @@ namespace Hotel_Booking_System
 
         private void Logout_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form1 f = new Form1();
-            f.Show();
+            Hide();
+            Program.sign_in.Show();
         }
 
         private void Account_info_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            EditUserInfo obj = new EditUserInfo();
-            obj.Show();
+            Hide();
+            Program.editUserInfo.Show();
         }
 
         private void register_label_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string x = CultureInfo.CurrentCulture.DateTimeFormat.GetAbbreviatedMonthName(check_in_date.Value.Month).ToUpper(), y = CultureInfo.CurrentCulture.DateTimeFormat.GetAbbreviatedMonthName(check_out_date.Value.Month).ToUpper();
+                string start_date = check_in_date.Value.Day.ToString() + "-" + x + "-" + check_in_date.Value.Year.ToString();
+                string end_date = check_out_date.Value.Day.ToString() + "-" + y + "-" + check_out_date.Value.Year.ToString();
+                if (comboBox1.SelectedItem == null || min_price_txt.Text.Length==0 || max_price_txt.Text.Length==0 || textBox3.Text.Length==0)
+                {
+                    MessageBox.Show("Please, enter valid data.");
+                    return;
+                }
+                List<Room> rooms = Room.search(min_price_txt.Text, max_price_txt.Text, start_date, end_date, textBox3.Text, comboBox1.SelectedItem.ToString());
+                if (rooms == null)
+                {
+                    MessageBox.Show("Please, enter valid data.");
+                    return;
+                }
+                flowLayoutPanel1.Controls.Clear();
+                foreach (Room room in rooms)
+                {
+                    roomsList obj = new roomsList();
+                    obj.View = room.view.ToString();
+                    obj.Description = room.description;
+                    try
+                    {
+                        obj.Photo = Image.FromFile(room.photo.Replace('\\', '/'));
+                    }
+                    catch (Exception ex)
+                    {
+                        string workingDirectory = Environment.CurrentDirectory;
+                        string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
+                        obj.Photo = Image.FromFile(projectDirectory.Replace('\\', '/') + "/Hotel Booking System/" + "deafult_image.png");
+                    }
+                    obj.label2.Text = room.no_of_beds.ToString();
+                    obj.label4.Text = room.price.ToString();
+                    obj.room_no = room.room_no.ToString();
+                    flowLayoutPanel1.Controls.Add(obj);
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Please, enter valid data.");
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

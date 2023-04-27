@@ -68,6 +68,7 @@
     <Compile Include="Payment.Designer.cs">
       <DependentUpon>Payment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reservation.cs" />
     <Compile Include="Room.cs" />
     <Compile Include="roomsList.cs">
       <SubType>UserControl</SubType>
