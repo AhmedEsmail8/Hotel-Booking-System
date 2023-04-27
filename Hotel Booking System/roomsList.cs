@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ namespace Hotel_Booking_System
 {
     public partial class roomsList : UserControl
     {
+        public string room_no;
         public roomsList()
         {
             InitializeComponent();
@@ -57,9 +59,17 @@ namespace Hotel_Booking_System
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.ParentForm.Hide();
-            Payment p = new Payment();
-            p.Show();
+            ParentForm.Hide();
+            string x = CultureInfo.CurrentCulture.DateTimeFormat.GetAbbreviatedMonthName(Program.home.check_in_date.Value.Month).ToUpper(), y = CultureInfo.CurrentCulture.DateTimeFormat.GetAbbreviatedMonthName(Program.home.check_out_date.Value.Month).ToUpper();
+            string start_date = Program.home.check_in_date.Value.Day.ToString() + "-" + x + "-" + Program.home.check_in_date.Value.Year.ToString();
+            string end_date = Program.home.check_out_date.Value.Day.ToString() + "-" + y + "-" + Program.home.check_out_date.Value.Year.ToString();
+            Program.reservation.start_date = start_date;
+            Program.reservation.end_date = end_date;
+            Program.reservation.guest = Program.user;
+            Program.reservation.room_no = room_no;
+            Console.WriteLine(Program.reservation.room_no + "  " + Program.reservation.start_date + "  " + Program.reservation.end_date);
+            Program.payment.handle();
+            Program.payment.Show();
         }
     }
 }

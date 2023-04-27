@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,7 +16,7 @@ namespace Hotel_Booking_System
     }
     public  class User
     {
-        public string f_name, l_name, ssn, email, phone_number, password;
+        public string f_name, l_name, ssn, email, phone_number, password, photo;
         OracleConnection conn;
         List<credit_card> credit_cards = new List<credit_card>();
 
@@ -25,6 +26,30 @@ namespace Hotel_Booking_System
         public User(OracleConnection conn)
         {
             this.conn = conn;
+        }
+
+        public User(string ssn)
+        {
+            OracleCommand cmd = new OracleCommand("SELECT * FROM guests WHERE ssn = :ssn", Program.conn);
+            cmd.Parameters.Add("ssn", ssn);
+            OracleDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                f_name = dr[1].ToString();
+                l_name = dr[2].ToString();
+                ssn = dr[0].ToString();
+                email = dr[3].ToString();
+                password = dr[5].ToString();
+                phone_number = dr[4].ToString();
+                photo = dr[6].ToString().Replace('\\', '/');
+
+                if (photo.Length == 0)
+                {
+                    string workingDirectory = Environment.CurrentDirectory;
+                    string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
+                    photo = projectDirectory.Replace('\\', '/') + "/Hotel Booking System/" + "profile_deafult.jpeg";
+                }
+            }
         }
 
         public bool login(string email, string password)
@@ -56,6 +81,14 @@ namespace Hotel_Booking_System
                     this.email = email;
                     this.password = password;
                     phone_number = dr[4].ToString();
+                    photo = dr[6].ToString().Replace('\\', '/');
+                    
+                    if (photo.Length == 0)
+                    {
+                        string workingDirectory = Environment.CurrentDirectory;
+                        string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
+                        photo = projectDirectory.Replace('\\', '/')+ "/Hotel Booking System/" + "profile_deafult.jpeg";
+                    }
                     return true;
                 }
                 else                    
@@ -109,6 +142,28 @@ namespace Hotel_Booking_System
             {
                 return false;
             }
+        }
+
+        public bool update(string f_name, string l_name, string phone, string email, string password, string photo)
+        {
+            OracleCommand cmd = new OracleCommand("UPDATE guests SET f_name = :a, l_name = :b, phone_number = :c, email = :d, password = :pass, photo = :ph WHERE ssn = :ssn", Program.conn);
+            cmd.Parameters.Add("a", f_name);
+            cmd.Parameters.Add("b", l_name);
+            cmd.Parameters.Add("c", phone);
+            cmd.Parameters.Add("d", email);
+            cmd.Parameters.Add("pass", password);
+            cmd.Parameters.Add("ph", photo.Replace("\\", "/"));
+            cmd.Parameters.Add("ssn", ssn);
+            int r = cmd.ExecuteNonQuery();
+            if (r == -1)
+                return false;
+            this.f_name = f_name;
+            this.l_name = l_name;
+            phone_number = phone;
+            this.email = email;
+            this.password = password;
+            this.photo = photo.Replace("\\", "/");
+            return true;
         }
     }
 }

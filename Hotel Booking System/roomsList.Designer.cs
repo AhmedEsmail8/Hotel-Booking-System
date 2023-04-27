@@ -165,9 +165,9 @@ namespace Hotel_Booking_System
         private System.Windows.Forms.Label view;
         private System.Windows.Forms.Label description;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        public System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel1;
     }

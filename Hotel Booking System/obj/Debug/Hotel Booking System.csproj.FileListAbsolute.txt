@@ -24,3 +24,5 @@ D:\Projects\Software\Hotel Booking System\Hotel Booking System\obj\Debug\Hotel_B
 D:\Projects\Software\Hotel Booking System\Hotel Booking System\obj\Debug\Hotel Booking System.csproj.AssemblyReference.cache
 D:\SW_project\Hotel-Booking-System\Hotel Booking System\obj\Debug\Hotel_Booking_System.EditUserInfo.resources
 D:\SW_project\Hotel-Booking-System\Hotel Booking System\obj\Debug\Hotel_Booking_System.Payment.resources
+D:\Projects\Software\Hotel Booking System\Hotel Booking System\obj\Debug\Hotel_Booking_System.EditUserInfo.resources
+D:\Projects\Software\Hotel Booking System\Hotel Booking System\obj\Debug\Hotel_Booking_System.Payment.resources
