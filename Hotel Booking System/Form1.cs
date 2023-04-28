@@ -89,6 +89,11 @@ namespace Hotel_Booking_System
                     Hide();
                     Program.home.Show();
                 }
+                else
+                {
+                    Hide();
+                    Program.receptionisthome.Show();
+                }
             }
         }
 
@@ -102,6 +107,11 @@ namespace Hotel_Booking_System
                 {
                     Hide();
                     Program.home.Show();
+                }
+                else
+                {
+                    Hide();
+                    Program.receptionisthome.Show();
                 }
             }
         }

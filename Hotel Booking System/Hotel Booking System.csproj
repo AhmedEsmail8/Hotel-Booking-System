@@ -74,7 +74,37 @@
     <Compile Include="Payment.Designer.cs">
       <DependentUpon>Payment.cs</DependentUpon>
     </Compile>
+    <Compile Include="receptionAddRooms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="receptionAddRooms.Designer.cs">
+      <DependentUpon>receptionAddRooms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="receptionEditRooms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="receptionEditRooms.designer.cs">
+      <DependentUpon>receptionEditRooms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="receptionistHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="receptionistHome.designer.cs">
+      <DependentUpon>receptionistHome.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reservation.cs" />
+    <Compile Include="reservationItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="reservationItem.designer.cs">
+      <DependentUpon>reservationItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reservations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservations.designer.cs">
+      <DependentUpon>Reservations.cs</DependentUpon>
+    </Compile>
     <Compile Include="reservationsList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +157,21 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="receptionAddRooms.resx">
+      <DependentUpon>receptionAddRooms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="receptionEditRooms.resx">
+      <DependentUpon>receptionEditRooms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="receptionistHome.resx">
+      <DependentUpon>receptionistHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reservationItem.resx">
+      <DependentUpon>reservationItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reservations.resx">
+      <DependentUpon>Reservations.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="reservationsList.resx">
       <DependentUpon>reservationsList.cs</DependentUpon>
     </EmbeddedResource>
