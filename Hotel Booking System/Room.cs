@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,6 +33,12 @@ namespace Hotel_Booking_System
                 price = Int16.Parse(dr[4].ToString());
                 available = dr[5].ToString();
                 photo = dr[6].ToString().Replace("\\", "/");
+                if (photo.Length == 0)
+                {
+                    string workingDirectory = Environment.CurrentDirectory;
+                    string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
+                    photo = projectDirectory.Replace('\\', '/') + "/Hotel Booking System/deafult_image.png";
+                }
             }
         }
 

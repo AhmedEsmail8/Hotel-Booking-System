@@ -353,6 +353,8 @@ namespace Hotel_Booking_System
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.reservationsList_FormClosed);
             this.Load += new System.EventHandler(this.reservationsList_Load);
+            this.Shown += new System.EventHandler(this.reservationsList_Shown);
+            this.VisibleChanged += new System.EventHandler(this.reservationsList_VisibleChanged);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.show_menu)).EndInit();

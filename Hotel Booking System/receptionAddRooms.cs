@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,7 +27,12 @@ namespace Hotel_Booking_System
             addroompagebuttin.Parent = sideBar;
             addroompagebuttin.BackColor = Color.Transparent;
             this.ShowInTaskbar = false;
-
+            OracleCommand cmd = new OracleCommand("SELECT DISTINCT room_view FROM rooms", Program.conn);
+            OracleDataReader dr = cmd.ExecuteReader();
+            comboBox1.Items.Clear();
+            while (dr.Read())
+                comboBox1.Items.Add(dr[0].ToString());
+            desctextBox.Text = "";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -106,7 +112,9 @@ namespace Hotel_Booking_System
 
         private void pictureBox4_Click_1(object sender, EventArgs e)
         {
-            pictureBox2.ImageLocation = "C:/Users/ahmed/Downloads/add9c1dd-79ad-43cd-838c-dc2886010708.jpg";
+            string workingDirectory = Environment.CurrentDirectory;
+            string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
+            pictureBox2.ImageLocation = projectDirectory.Replace('\\', '/') + "/Hotel Booking System/deafult_image.png";
         }
 
         private void price_Click(object sender, EventArgs e)
@@ -119,13 +127,21 @@ namespace Hotel_Booking_System
 
             try
             {
+                OracleCommand cmd = new OracleCommand("SELECT * FROM rooms WHERE room_no = :n", Program.conn);
+                cmd.Parameters.Add("n", roomnumbertextBox.Text);
+                OracleDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    MessageBox.Show("Room already exist!!");
+                    return;
+                }
                 string conn = "Data Source=orcl;User Id=scott;Password=tiger";
                 string comstr = "INSERT INTO ROOMS (ROOM_NO , DESCRIPTION , NO_OF_BEDS , ROOM_VIEW , PRICE_PER_NIGHT , AVAILABLE , PHOTO) VALUES (:room_no ,:description , :no_of_beds , :room_view , :price_per_night , :available , :photo)";
                 adapter = new OracleDataAdapter(comstr, conn);
                 adapter.SelectCommand.Parameters.Add("room_no", roomnumbertextBox.Text);
                 adapter.SelectCommand.Parameters.Add("description", desctextBox.Text);
                 adapter.SelectCommand.Parameters.Add("no_of_beds", bedstextBox.Text);
-                adapter.SelectCommand.Parameters.Add("room_view", comboBox1.SelectedItem.ToString());
+                adapter.SelectCommand.Parameters.Add("room_view", comboBox1.Text.ToString());
                 adapter.SelectCommand.Parameters.Add("price_per_night", pricetextBox.Text);
 
                 if (radioButton1.Checked)
@@ -150,6 +166,9 @@ namespace Hotel_Booking_System
                 radioButton1.Checked = false;
                 radioButton2.Checked = false;
                 pictureBox2.ImageLocation = "";
+                if (!comboBox1.Items.Contains(comboBox1.Text))
+                    comboBox1.Items.Add(comboBox1.Text);
+                comboBox1.Text = "";
             }
             catch
             {

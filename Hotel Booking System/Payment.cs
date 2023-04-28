@@ -129,10 +129,11 @@ namespace Hotel_Booking_System
                 else if (radioButton2.Checked)
                 {
                     Program.reservation.payment_method = "cash";
+                    Program.reservation.save();
                     Hide();
                     Program.home.Show();
                 }
-                
+                Program.reservationslist.Fill();
             }
             catch(Exception ex)
             {

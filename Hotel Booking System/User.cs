@@ -37,7 +37,7 @@ namespace Hotel_Booking_System
             {
                 f_name = dr[1].ToString();
                 l_name = dr[2].ToString();
-                ssn = dr[0].ToString();
+                this.ssn = dr[0].ToString();
                 email = dr[3].ToString();
                 password = dr[5].ToString();
                 phone_number = dr[4].ToString();
@@ -158,7 +158,12 @@ namespace Hotel_Booking_System
 
         public bool update(string f_name, string l_name, string phone, string email, string password, string photo)
         {
-            OracleCommand cmd = new OracleCommand("UPDATE guests SET f_name = :a, l_name = :b, phone_number = :c, email = :d, password = :pass, photo = :ph WHERE ssn = :ssn", Program.conn);
+            string cmdstr;
+            if (!type)
+                cmdstr = "UPDATE guests SET f_name = :a, l_name = :b, phone_number = :c, email = :d, password = :pass, photo = :ph WHERE ssn = :ssn";
+            else
+                cmdstr = "UPDATE receptionists SET f_name = :a, l_name = :b, phone_number = :c, email = :d, password = :pass, photo = :ph WHERE ssn = :ssn";
+            OracleCommand cmd = new OracleCommand(cmdstr, Program.conn);
             cmd.Parameters.Add("a", f_name);
             cmd.Parameters.Add("b", l_name);
             cmd.Parameters.Add("c", phone);

@@ -23,18 +23,27 @@ namespace Hotel_Booking_System
         {
 
             menubar.Hide();
-            addroompagebutton.Parent = menubar;
-            addroompagebutton.BackColor = Color.Transparent;
-            this.ShowInTaskbar = false;
+            Fill();
+        }
 
-
-            for (int i = 0; i < 6; i++)
-              {                
-                   
-                    reservationItem obj = new reservationItem();
-                    flowLayoutPanel2.Controls.Add(obj);
-                             
-              }          
+        public void Fill()
+        {
+            flowLayoutPanel2.Controls.Clear();
+            OracleCommand cmd = new OracleCommand("SELECT reservation_id FROM pending_reservations", Program.conn);
+            OracleDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                Reservation res = new Reservation(dr[0].ToString());
+                reservationItem obj = new reservationItem();
+                obj.reservationid.Text = res.res_id;
+                obj.gestid.Text = res.guest.ssn;
+                obj.roomnumber.Text = res.room.room_no.ToString();
+                obj.startDate.Text = res.start_date;
+                obj.endDate.Text = res.end_date;
+                obj.paymethod.Text = res.payment_method;
+                obj.reservation = res;
+                flowLayoutPanel2.Controls.Add(obj);
+            }
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -88,6 +97,16 @@ namespace Hotel_Booking_System
         private void Reservations_FormClosed(object sender, FormClosedEventArgs e)
         {
             Program.sign_in.Close();
+        }
+
+        private void Reservations_VisibleChanged(object sender, EventArgs e)
+        {
+            Fill();
+        }
+
+        private void Reservations_Shown(object sender, EventArgs e)
+        {
+            Fill();
         }
     }
 }

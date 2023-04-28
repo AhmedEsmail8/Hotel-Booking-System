@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oracle.DataAccess.Client;
 using Oracle.DataAccess.Types;
+using System.IO;
 
 namespace Hotel_Booking_System
 {
@@ -22,44 +23,6 @@ namespace Hotel_Booking_System
             InitializeComponent();
         }
 
-        private void fill_search()
-        {
-            try
-            {
-                string connStr = "Data Source=orcl;User Id=scott;Password=tiger";
-                using (OracleConnection conn = new OracleConnection(connStr))
-                {
-                    conn.Open();
-                    string cmdStr = "Select * from rooms where room_no=:room_no";
-                    OracleCommand cmd = new OracleCommand(cmdStr, conn);
-                    cmd.Parameters.Add("room_no", roomnumbertextBox.Text);
-                    adapter = new OracleDataAdapter(cmd);
-                    ds = new DataSet();
-                    adapter.Fill(ds);
-                    desctextBox.Text = ds.Tables[0].Rows[0]["description"].ToString();
-                    bedstextBox.Text = ds.Tables[0].Rows[0]["no_of_beds"].ToString();
-                    pricetextBox.Text = ds.Tables[0].Rows[0]["price_per_night"].ToString();
-                    comboBox1.Text = ds.Tables[0].Rows[0]["room_view"].ToString();
-                    string availablity = ds.Tables[0].Rows[0]["available"].ToString().Replace("\\", "/");
-                    if (availablity == "yes")
-                    {
-                        radioButton1.Checked = true;
-
-                    }
-                    else if (availablity == "no")
-                    {
-                        radioButton2.Checked = true;
-                    }
-                    pictureBox2.ImageLocation = ds.Tables[0].Rows[0]["photo"].ToString();
-
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Error this room not found");
-            }
-
-        }
         private void receptionEditRooms_Load(object sender, EventArgs e)
         {
             sideBar.Hide();
@@ -132,7 +95,9 @@ namespace Hotel_Booking_System
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            pictureBox2.ImageLocation = "C:/Users/ahmed/Downloads/add9c1dd-79ad-43cd-838c-dc2886010708.jpg";
+            string workingDirectory = Environment.CurrentDirectory;
+            string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
+            pictureBox2.ImageLocation = projectDirectory.Replace('\\', '/') + "/Hotel Booking System/deafult_image.png";
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -169,12 +134,42 @@ namespace Hotel_Booking_System
             radioButton1.Enabled = true;
             radioButton2.Enabled = true;
             string conn = "Data Source=orcl;User Id=scott;Password=tiger";
-            string comstr = "SELECT description , no_of_beds , price_per_night , room_view , AVAILABLE , PHOTO FROM ROOMS WHERE ROOM_NO=:room_no";
+            string comstr = "SELECT * FROM ROOMS WHERE ROOM_NO=:room_no";
             adapter = new OracleDataAdapter(comstr, conn);
             adapter.SelectCommand.Parameters.Add("room_no", roomnumbertextBox.Text);
             ds = new DataSet();
             adapter.Fill(ds);
-            fill_search();
+            desctextBox.Text = ds.Tables[0].Rows[0]["description"].ToString();
+            bedstextBox.Text = ds.Tables[0].Rows[0]["no_of_beds"].ToString();
+            pricetextBox.Text = ds.Tables[0].Rows[0]["price_per_night"].ToString();
+            comboBox1.Text = ds.Tables[0].Rows[0]["room_view"].ToString();
+
+            OracleCommand cmd = new OracleCommand("SELECT DISTINCT room_view FROM rooms", Program.conn);
+            OracleDataReader dr = cmd.ExecuteReader();
+            comboBox1.Items.Clear();
+            while (dr.Read())
+                comboBox1.Items.Add(dr[0].ToString());
+
+            string availablity = ds.Tables[0].Rows[0]["available"].ToString().Replace("\\", "/");
+            if (availablity == "yes")
+            {
+                radioButton1.Checked = true;
+
+            }
+            else if (availablity == "no")
+            {
+                radioButton2.Checked = true;
+            }
+            string x = ds.Tables[0].Rows[0]["photo"].ToString();
+            Console.WriteLine(x);
+            Console.WriteLine(x.Length);
+            if (x.Length == 0)
+            {
+                string workingDirectory = Environment.CurrentDirectory;
+                string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
+                x = projectDirectory.Replace('\\', '/') + "/Hotel Booking System/deafult_image.png";
+            }
+            pictureBox2.ImageLocation = x;
         }
 
         private void editroom_Click(object sender, EventArgs e)
@@ -183,26 +178,36 @@ namespace Hotel_Booking_System
             {
                 //OracleCommandBuilder builder = new OracleCommandBuilder(adapter);
 
-                string conn = "Data Source=orcl;User Id=scott;Password=tiger";
-                string comstr = "UPDATE ROOMS SET DESCRIPTION=:description , NO_OF_BEDS=:no_of_beds , PRICE_PER_NIGHT=:price_per_night , ROOM_VIEW=:room_view , AVAILABLE=:available ,PHOTO=:photo WHERE ROOM_NO=:room_no ";
-                adapter = new OracleDataAdapter(comstr, conn);
-                adapter.SelectCommand.Parameters.Add("description", desctextBox.Text);
-                adapter.SelectCommand.Parameters.Add("no_of_beds", bedstextBox.Text);
-                adapter.SelectCommand.Parameters.Add("price_per_night", pricetextBox.Text);
-                adapter.SelectCommand.Parameters.Add("room_view", comboBox1.SelectedItem.ToString());
+                //string conn = "Data Source=orcl;User Id=scott;Password=tiger";
+                //string comstr = "UPDATE ROOMS SET DESCRIPTION=:description , NO_OF_BEDS=:no_of_beds , PRICE_PER_NIGHT=:price_per_night , ROOM_VIEW=:room_view , AVAILABLE=:available ,PHOTO=:photo WHERE ROOM_NO=:room_no ";
+                //adapter = new OracleDataAdapter(comstr, conn);
+                //adapter.SelectCommand.Parameters.Add("description", desctextBox.Text);
+                //adapter.SelectCommand.Parameters.Add("no_of_beds", bedstextBox.Text);
+                //adapter.SelectCommand.Parameters.Add("price_per_night", pricetextBox.Text);
+                //adapter.SelectCommand.Parameters.Add("room_view", comboBox1.SelectedItem.ToString());
+                //if (radioButton1.Checked)
+                //{
+                //    adapter.SelectCommand.Parameters.Add("available", "yes");
+                //}
+                //else if (radioButton2.Checked)
+                //{
+                //    adapter.SelectCommand.Parameters.Add("available", "no");
+                //}
+                //adapter.SelectCommand.Parameters.Add("photo", pictureBox2.ImageLocation);
+                //adapter.SelectCommand.Parameters.Add("room_no", roomnumbertextBox.Text);
+                //ds = new DataSet();
+                //adapter.Fill(ds);
+                ds.Tables[0].Rows[0]["description"] = desctextBox.Text;
+                ds.Tables[0].Rows[0]["no_of_beds"] = bedstextBox.Text;
+                ds.Tables[0].Rows[0]["price_per_night"] = pricetextBox.Text;
+                ds.Tables[0].Rows[0]["room_view"] = comboBox1.Text;
                 if (radioButton1.Checked)
-                {
-                    adapter.SelectCommand.Parameters.Add("available", "yes");
-                }
-                else if (radioButton2.Checked)
-                {
-                    adapter.SelectCommand.Parameters.Add("available", "no");
-                }
-                adapter.SelectCommand.Parameters.Add("photo", pictureBox2.ImageLocation);
-                adapter.SelectCommand.Parameters.Add("room_no", roomnumbertextBox.Text);
-                ds = new DataSet();
-                adapter.Fill(ds);
-
+                    ds.Tables[0].Rows[0]["available"] = "yes";
+                else
+                    ds.Tables[0].Rows[0]["available"] = "no";
+                ds.Tables[0].Rows[0]["photo"] = pictureBox2.ImageLocation;
+                OracleCommandBuilder builder = new OracleCommandBuilder(adapter);
+                adapter.Update(ds);
                 //DataTable table = ds.Tables["ROOMS"];
                 //table.Columns["ROOM_NO"].Unique = true;
                 //adapter.Update(ds);

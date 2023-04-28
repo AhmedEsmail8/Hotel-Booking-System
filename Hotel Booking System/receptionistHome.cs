@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -114,20 +115,10 @@ namespace Hotel_Booking_System
         {
             try
             {
-                string conn = "Data Source=orcl;User Id=scott;Password=tiger";
-                string cmdstr = "UPDATE RECEPTIONISTS SET F_NAME=:F_NAME, L_NAME=:L_NAME, PASSWORD=:PASSWORD, PHONE_NUMBER=:PHONE , PHOTO=:photo WHERE SSN=:SSN";
-                adapter = new OracleDataAdapter(cmdstr, conn);
-                adapter.SelectCommand.Parameters.Add("f_name", textBox1.Text);
-                adapter.SelectCommand.Parameters.Add("l_name", textBox2.Text);
-                adapter.SelectCommand.Parameters.Add("password", textBox3.Text);
-                adapter.SelectCommand.Parameters.Add("PHONE_NUMBER", textBox4.Text);
-                adapter.SelectCommand.Parameters.Add("photo",pictureBox1.ImageLocation);
-                adapter.SelectCommand.Parameters.Add("ssn", ssnlabel.Text);
-                ds = new DataSet();
-                //OracleCommandBuilder builder = new OracleCommandBuilder(adapter);
-                //adapter.Update(ds);
-                adapter.Fill(ds);
-                MessageBox.Show("Successfully updated your personal information");
+                if (Program.user.update(textBox1.Text, textBox2.Text, textBox4.Text, Program.user.email, textBox3.Text, pictureBox1.ImageLocation))
+                    MessageBox.Show("Successfully updated your personal information");
+                else
+                    MessageBox.Show("Something went wrong , please try again!");
             }
             catch
             {
@@ -137,7 +128,9 @@ namespace Hotel_Booking_System
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            pictureBox1.ImageLocation = "C:/Users/LENOVO.SXH07/Desktop/term material/project Software/WhatsApp Image 2023-04-26 at 2.04.23 PM.jpeg";
+            string workingDirectory = Environment.CurrentDirectory;
+            string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
+            pictureBox1.ImageLocation = projectDirectory.Replace('\\', '/') + "/Hotel Booking System/" + "profile_deafult.jpeg";
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -153,7 +146,6 @@ namespace Hotel_Booking_System
 
                     imageLocation = dialog.FileName;
                     pictureBox1.ImageLocation = imageLocation;
-                    //MessageBox.Show(imageLocation);
                 }
             }
             catch (Exception error)

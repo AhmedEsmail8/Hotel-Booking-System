@@ -88,15 +88,34 @@ namespace Hotel_Booking_System
 
         public void delete()
         {
+            
             OracleCommand cmd = new OracleCommand("DELETE FROM credit_cards WHERE res_id = :id", Program.conn);
             OracleCommand cmd2 = new OracleCommand("DELETE FROM pending_reservations WHERE reservation_id = :id", Program.conn);
             OracleCommand cmd3 = new OracleCommand("DELETE FROM reservations WHERE res_id = :id", Program.conn);
+            OracleCommand cmd4 = new OracleCommand("DELETE FROM actions WHERE reservation_id = :id", Program.conn);
+
             cmd.Parameters.Add("id", res_id);
             cmd2.Parameters.Add("id", res_id);
+            cmd4.Parameters.Add("id", res_id);
             cmd3.Parameters.Add("id", res_id);
             cmd.ExecuteNonQuery();
             cmd2.ExecuteNonQuery();
-            cmd3.ExecuteNonQuery();
+            try
+            {
+                cmd4.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            try
+            {
+                cmd3.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }

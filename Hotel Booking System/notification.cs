@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Oracle.DataAccess.Client;
+using Oracle.DataAccess.Types;
 
 namespace Hotel_Booking_System
 {
@@ -110,6 +112,14 @@ namespace Hotel_Booking_System
 
         private void edit_reservation_Click(object sender, EventArgs e)
         {
+            OracleCommand cmd = new OracleCommand("SELECT * FROM actions WHERE reservation_id = :id", Program.conn);
+            cmd.Parameters.Add("id", reservation.res_id);
+            OracleDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                MessageBox.Show("You can't update this reservation because it's reviewed");
+                return;
+            }
             Program.reservationslist.flowLayoutPanel1.Controls.Clear();
             Program.reservationslist.edit_panel.Show();
             Program.reservationslist.selectedReservation = this.reservation;

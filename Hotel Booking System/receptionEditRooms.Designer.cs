@@ -73,7 +73,7 @@ namespace Hotel_Booking_System
             this.avalable.BackColor = System.Drawing.Color.Transparent;
             this.avalable.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.avalable.ForeColor = System.Drawing.Color.Black;
-            this.avalable.Location = new System.Drawing.Point(921, 782);
+            this.avalable.Location = new System.Drawing.Point(806, 782);
             this.avalable.Name = "avalable";
             this.avalable.Size = new System.Drawing.Size(125, 29);
             this.avalable.TabIndex = 32;
@@ -81,7 +81,6 @@ namespace Hotel_Booking_System
             // 
             // comboBox1
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.Enabled = false;
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.ForeColor = System.Drawing.Color.Gray;
@@ -90,20 +89,20 @@ namespace Hotel_Booking_System
             "overlooking the sea ",
             "overlooking downtown",
             "overlooking green area"});
-            this.comboBox1.Location = new System.Drawing.Point(944, 695);
+            this.comboBox1.Location = new System.Drawing.Point(826, 695);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(416, 37);
+            this.comboBox1.Size = new System.Drawing.Size(364, 37);
             this.comboBox1.TabIndex = 31;
             // 
             // roomnumbertextBox
             // 
             this.roomnumbertextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roomnumbertextBox.ForeColor = System.Drawing.Color.Gray;
-            this.roomnumbertextBox.Location = new System.Drawing.Point(944, 166);
+            this.roomnumbertextBox.Location = new System.Drawing.Point(826, 166);
             this.roomnumbertextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.roomnumbertextBox.Name = "roomnumbertextBox";
-            this.roomnumbertextBox.Size = new System.Drawing.Size(416, 34);
+            this.roomnumbertextBox.Size = new System.Drawing.Size(364, 34);
             this.roomnumbertextBox.TabIndex = 30;
             // 
             // roomnumlabel
@@ -112,7 +111,7 @@ namespace Hotel_Booking_System
             this.roomnumlabel.BackColor = System.Drawing.Color.Transparent;
             this.roomnumlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roomnumlabel.ForeColor = System.Drawing.Color.Black;
-            this.roomnumlabel.Location = new System.Drawing.Point(921, 134);
+            this.roomnumlabel.Location = new System.Drawing.Point(806, 134);
             this.roomnumlabel.Name = "roomnumlabel";
             this.roomnumlabel.Size = new System.Drawing.Size(189, 29);
             this.roomnumlabel.TabIndex = 29;
@@ -123,7 +122,7 @@ namespace Hotel_Booking_System
             this.view.AutoSize = true;
             this.view.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.view.ForeColor = System.Drawing.Color.Black;
-            this.view.Location = new System.Drawing.Point(921, 663);
+            this.view.Location = new System.Drawing.Point(806, 663);
             this.view.Name = "view";
             this.view.Size = new System.Drawing.Size(140, 29);
             this.view.TabIndex = 28;
@@ -134,10 +133,10 @@ namespace Hotel_Booking_System
             this.pricetextBox.Enabled = false;
             this.pricetextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pricetextBox.ForeColor = System.Drawing.Color.Gray;
-            this.pricetextBox.Location = new System.Drawing.Point(944, 613);
+            this.pricetextBox.Location = new System.Drawing.Point(826, 613);
             this.pricetextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pricetextBox.Name = "pricetextBox";
-            this.pricetextBox.Size = new System.Drawing.Size(416, 34);
+            this.pricetextBox.Size = new System.Drawing.Size(364, 34);
             this.pricetextBox.TabIndex = 27;
             // 
             // price
@@ -145,7 +144,7 @@ namespace Hotel_Booking_System
             this.price.AutoSize = true;
             this.price.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.price.ForeColor = System.Drawing.Color.Black;
-            this.price.Location = new System.Drawing.Point(921, 575);
+            this.price.Location = new System.Drawing.Point(806, 575);
             this.price.Name = "price";
             this.price.Size = new System.Drawing.Size(189, 29);
             this.price.TabIndex = 26;
@@ -158,10 +157,10 @@ namespace Hotel_Booking_System
             this.editroom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editroom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editroom.ForeColor = System.Drawing.Color.White;
-            this.editroom.Location = new System.Drawing.Point(1179, 774);
+            this.editroom.Location = new System.Drawing.Point(1032, 774);
             this.editroom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.editroom.Name = "editroom";
-            this.editroom.Size = new System.Drawing.Size(181, 75);
+            this.editroom.Size = new System.Drawing.Size(158, 75);
             this.editroom.TabIndex = 25;
             this.editroom.Text = "Edit";
             this.editroom.UseVisualStyleBackColor = false;
@@ -172,11 +171,11 @@ namespace Hotel_Booking_System
             this.bedstextBox.Enabled = false;
             this.bedstextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bedstextBox.ForeColor = System.Drawing.Color.Gray;
-            this.bedstextBox.Location = new System.Drawing.Point(944, 343);
+            this.bedstextBox.Location = new System.Drawing.Point(826, 343);
             this.bedstextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bedstextBox.MaxLength = 1;
             this.bedstextBox.Name = "bedstextBox";
-            this.bedstextBox.Size = new System.Drawing.Size(416, 34);
+            this.bedstextBox.Size = new System.Drawing.Size(364, 34);
             this.bedstextBox.TabIndex = 24;
             // 
             // nobLabel
@@ -185,7 +184,7 @@ namespace Hotel_Booking_System
             this.nobLabel.BackColor = System.Drawing.Color.Transparent;
             this.nobLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nobLabel.ForeColor = System.Drawing.Color.Black;
-            this.nobLabel.Location = new System.Drawing.Point(921, 311);
+            this.nobLabel.Location = new System.Drawing.Point(806, 311);
             this.nobLabel.Name = "nobLabel";
             this.nobLabel.Size = new System.Drawing.Size(202, 29);
             this.nobLabel.TabIndex = 23;
@@ -196,11 +195,11 @@ namespace Hotel_Booking_System
             this.desctextBox.Enabled = false;
             this.desctextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.desctextBox.ForeColor = System.Drawing.Color.Gray;
-            this.desctextBox.Location = new System.Drawing.Point(944, 426);
+            this.desctextBox.Location = new System.Drawing.Point(826, 426);
             this.desctextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.desctextBox.Multiline = true;
             this.desctextBox.Name = "desctextBox";
-            this.desctextBox.Size = new System.Drawing.Size(416, 139);
+            this.desctextBox.Size = new System.Drawing.Size(364, 139);
             this.desctextBox.TabIndex = 22;
             // 
             // descriptionlabel
@@ -208,7 +207,7 @@ namespace Hotel_Booking_System
             this.descriptionlabel.AutoSize = true;
             this.descriptionlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.descriptionlabel.ForeColor = System.Drawing.Color.Black;
-            this.descriptionlabel.Location = new System.Drawing.Point(921, 390);
+            this.descriptionlabel.Location = new System.Drawing.Point(806, 390);
             this.descriptionlabel.Name = "descriptionlabel";
             this.descriptionlabel.Size = new System.Drawing.Size(153, 29);
             this.descriptionlabel.TabIndex = 19;
@@ -221,7 +220,7 @@ namespace Hotel_Booking_System
             this.radioButton1.Enabled = false;
             this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton1.ForeColor = System.Drawing.Color.Black;
-            this.radioButton1.Location = new System.Drawing.Point(944, 814);
+            this.radioButton1.Location = new System.Drawing.Point(826, 814);
             this.radioButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(71, 33);
@@ -237,7 +236,7 @@ namespace Hotel_Booking_System
             this.radioButton2.Enabled = false;
             this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton2.ForeColor = System.Drawing.Color.Black;
-            this.radioButton2.Location = new System.Drawing.Point(1029, 814);
+            this.radioButton2.Location = new System.Drawing.Point(900, 814);
             this.radioButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(61, 33);
@@ -253,10 +252,10 @@ namespace Hotel_Booking_System
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(1093, 210);
+            this.button1.Location = new System.Drawing.Point(956, 210);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 60);
+            this.button1.Size = new System.Drawing.Size(88, 60);
             this.button1.TabIndex = 34;
             this.button1.Text = "Searsh";
             this.button1.UseVisualStyleBackColor = false;
@@ -268,7 +267,7 @@ namespace Hotel_Booking_System
             this.menutitle.BackColor = System.Drawing.Color.Transparent;
             this.menutitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menutitle.ForeColor = System.Drawing.Color.Transparent;
-            this.menutitle.Location = new System.Drawing.Point(40, 34);
+            this.menutitle.Location = new System.Drawing.Point(35, 34);
             this.menutitle.Name = "menutitle";
             this.menutitle.Size = new System.Drawing.Size(265, 32);
             this.menutitle.TabIndex = 5;
@@ -287,7 +286,7 @@ namespace Hotel_Booking_System
             this.addroompagebuttin.Location = new System.Drawing.Point(3, 279);
             this.addroompagebuttin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addroompagebuttin.Name = "addroompagebuttin";
-            this.addroompagebuttin.Size = new System.Drawing.Size(233, 89);
+            this.addroompagebuttin.Size = new System.Drawing.Size(204, 89);
             this.addroompagebuttin.TabIndex = 0;
             this.addroompagebuttin.Text = "Add Room";
             this.addroompagebuttin.UseVisualStyleBackColor = false;
@@ -306,7 +305,7 @@ namespace Hotel_Booking_System
             this.editRoompagebutton.Location = new System.Drawing.Point(3, 400);
             this.editRoompagebutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.editRoompagebutton.Name = "editRoompagebutton";
-            this.editRoompagebutton.Size = new System.Drawing.Size(233, 89);
+            this.editRoompagebutton.Size = new System.Drawing.Size(204, 89);
             this.editRoompagebutton.TabIndex = 6;
             this.editRoompagebutton.Text = "Edit Room";
             this.editRoompagebutton.UseVisualStyleBackColor = false;
@@ -325,7 +324,7 @@ namespace Hotel_Booking_System
             this.editadminpagebutton.Location = new System.Drawing.Point(3, 516);
             this.editadminpagebutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.editadminpagebutton.Name = "editadminpagebutton";
-            this.editadminpagebutton.Size = new System.Drawing.Size(233, 89);
+            this.editadminpagebutton.Size = new System.Drawing.Size(204, 89);
             this.editadminpagebutton.TabIndex = 7;
             this.editadminpagebutton.Text = "Edit Admin ";
             this.editadminpagebutton.UseVisualStyleBackColor = false;
@@ -337,7 +336,7 @@ namespace Hotel_Booking_System
             this.panel2.Location = new System.Drawing.Point(0, 105);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(421, 2);
+            this.panel2.Size = new System.Drawing.Size(368, 2);
             this.panel2.TabIndex = 5;
             // 
             // reservationspagebutton
@@ -353,7 +352,7 @@ namespace Hotel_Booking_System
             this.reservationspagebutton.Location = new System.Drawing.Point(4, 161);
             this.reservationspagebutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.reservationspagebutton.Name = "reservationspagebutton";
-            this.reservationspagebutton.Size = new System.Drawing.Size(233, 89);
+            this.reservationspagebutton.Size = new System.Drawing.Size(204, 89);
             this.reservationspagebutton.TabIndex = 8;
             this.reservationspagebutton.Text = "Reservations";
             this.reservationspagebutton.UseVisualStyleBackColor = false;
@@ -374,7 +373,7 @@ namespace Hotel_Booking_System
             this.sideBar.Location = new System.Drawing.Point(0, 0);
             this.sideBar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sideBar.Name = "sideBar";
-            this.sideBar.Size = new System.Drawing.Size(421, 1033);
+            this.sideBar.Size = new System.Drawing.Size(368, 1033);
             this.sideBar.TabIndex = 18;
             // 
             // button2
@@ -390,7 +389,7 @@ namespace Hotel_Booking_System
             this.button2.Location = new System.Drawing.Point(4, 631);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(233, 89);
+            this.button2.Size = new System.Drawing.Size(204, 89);
             this.button2.TabIndex = 39;
             this.button2.Text = "Log out";
             this.button2.UseVisualStyleBackColor = false;
@@ -400,10 +399,10 @@ namespace Hotel_Booking_System
             // 
             this.Exit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Exit.Image = ((System.Drawing.Image)(resources.GetObject("Exit.Image")));
-            this.Exit.Location = new System.Drawing.Point(343, 34);
+            this.Exit.Location = new System.Drawing.Point(300, 34);
             this.Exit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Exit.Name = "Exit";
-            this.Exit.Size = new System.Drawing.Size(35, 32);
+            this.Exit.Size = new System.Drawing.Size(31, 32);
             this.Exit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Exit.TabIndex = 5;
             this.Exit.TabStop = false;
@@ -413,10 +412,10 @@ namespace Hotel_Booking_System
             // 
             this.pictureBox4.Enabled = false;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(627, 354);
+            this.pictureBox4.Location = new System.Drawing.Point(549, 354);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(61, 50);
+            this.pictureBox4.Size = new System.Drawing.Size(53, 50);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 36;
             this.pictureBox4.TabStop = false;
@@ -426,10 +425,10 @@ namespace Hotel_Booking_System
             // 
             this.pictureBox3.Enabled = false;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(539, 354);
+            this.pictureBox3.Location = new System.Drawing.Point(472, 354);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(61, 50);
+            this.pictureBox3.Size = new System.Drawing.Size(53, 50);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 35;
             this.pictureBox3.TabStop = false;
@@ -438,10 +437,10 @@ namespace Hotel_Booking_System
             // menubutton
             // 
             this.menubutton.Image = ((System.Drawing.Image)(resources.GetObject("menubutton.Image")));
-            this.menubutton.Location = new System.Drawing.Point(12, 12);
+            this.menubutton.Location = new System.Drawing.Point(10, 12);
             this.menubutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.menubutton.Name = "menubutton";
-            this.menubutton.Size = new System.Drawing.Size(67, 41);
+            this.menubutton.Size = new System.Drawing.Size(59, 41);
             this.menubutton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.menubutton.TabIndex = 17;
             this.menubutton.TabStop = false;
@@ -451,10 +450,10 @@ namespace Hotel_Booking_System
             // 
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(461, 129);
+            this.pictureBox2.Location = new System.Drawing.Point(403, 129);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(315, 214);
+            this.pictureBox2.Size = new System.Drawing.Size(276, 214);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 20;
             this.pictureBox2.TabStop = false;
@@ -465,7 +464,7 @@ namespace Hotel_Booking_System
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(876, 34);
+            this.label1.Location = new System.Drawing.Point(766, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(317, 69);
             this.label1.TabIndex = 38;
@@ -473,10 +472,10 @@ namespace Hotel_Booking_System
             // 
             // receptionEditRooms
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1902, 1033);
+            this.ClientSize = new System.Drawing.Size(1664, 1033);
             this.Controls.Add(this.sideBar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox4);

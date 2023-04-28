@@ -47,7 +47,6 @@ namespace Hotel_Booking_System
             this.response = new System.Windows.Forms.Label();
             this.cancel_reservation = new System.Windows.Forms.Button();
             this.edit_reservation = new System.Windows.Forms.Button();
-            this.ok_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -233,26 +232,10 @@ namespace Hotel_Booking_System
             this.edit_reservation.UseVisualStyleBackColor = false;
             this.edit_reservation.Click += new System.EventHandler(this.edit_reservation_Click);
             // 
-            // ok_btn
-            // 
-            this.ok_btn.BackColor = System.Drawing.Color.DarkOrange;
-            this.ok_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ok_btn.FlatAppearance.BorderSize = 0;
-            this.ok_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ok_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ok_btn.ForeColor = System.Drawing.Color.White;
-            this.ok_btn.Location = new System.Drawing.Point(276, 461);
-            this.ok_btn.Name = "ok_btn";
-            this.ok_btn.Size = new System.Drawing.Size(251, 39);
-            this.ok_btn.TabIndex = 27;
-            this.ok_btn.Text = "OK";
-            this.ok_btn.UseVisualStyleBackColor = false;
-            // 
             // notification
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.ok_btn);
             this.Controls.Add(this.edit_reservation);
             this.Controls.Add(this.cancel_reservation);
             this.Controls.Add(this.response);
@@ -298,6 +281,5 @@ namespace Hotel_Booking_System
         public System.Windows.Forms.Label response;
         private System.Windows.Forms.Button cancel_reservation;
         private System.Windows.Forms.Button edit_reservation;
-        private System.Windows.Forms.Button ok_btn;
     }
 }

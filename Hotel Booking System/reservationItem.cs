@@ -19,6 +19,7 @@ namespace Hotel_Booking_System
         OracleDataAdapter adapter;
         public DataSet ds;
         public int rowCount;
+        public Reservation reservation;
        
         public reservationItem()
         {
@@ -95,13 +96,50 @@ namespace Hotel_Booking_System
 
         private void accept_Click(object sender, EventArgs e)
         {
-            
-
+            OracleCommand cmd = new OracleCommand("DELETE FROM pending_reservations WHERE reservation_id = :id", Program.conn);
+            cmd.Parameters.Add("id", this.reservation.res_id);
+            int r = cmd.ExecuteNonQuery();
+            if (r == -1)
+            {
+                MessageBox.Show("Please, try again");
+                return;
+            }
+            OracleCommand cmd2 = new OracleCommand("INSERT INTO actions VALUES(:g, :res, :rec, :acc)", Program.conn);
+            cmd2.Parameters.Add("g", this.reservation.guest.ssn);
+            cmd2.Parameters.Add("res", this.reservation.res_id);
+            cmd2.Parameters.Add("rec", Program.user.ssn);
+            cmd2.Parameters.Add("acc", "yes");
+            int r2 = cmd2.ExecuteNonQuery();
+            if (r2 == -1)
+            {
+                MessageBox.Show("Please, try again");
+                return;
+            }
+            Hide();
         }
 
         private void decline_Click(object sender, EventArgs e)
         {
-
+            OracleCommand cmd = new OracleCommand("DELETE FROM pending_reservations WHERE reservation_id = :id", Program.conn);
+            cmd.Parameters.Add("id", this.reservation.res_id);
+            int r = cmd.ExecuteNonQuery();
+            if (r == -1)
+            {
+                MessageBox.Show("Please, try again");
+                return;
+            }
+            OracleCommand cmd2 = new OracleCommand("INSERT INTO actions VALUES(:g, :res, :rec, :acc)", Program.conn);
+            cmd2.Parameters.Add("g", this.reservation.guest.ssn);
+            cmd2.Parameters.Add("res", this.reservation.res_id);
+            cmd2.Parameters.Add("rec", Program.user.ssn);
+            cmd2.Parameters.Add("acc", "no");
+            int r2 = cmd2.ExecuteNonQuery();
+            if (r2 == -1)
+            {
+                MessageBox.Show("Please, try again");
+                return;
+            }
+            Hide();
         }
 
         private void reservationItem_Load(object sender, EventArgs e)

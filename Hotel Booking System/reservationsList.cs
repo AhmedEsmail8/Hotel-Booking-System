@@ -35,7 +35,7 @@ namespace Hotel_Booking_System
         public void Fill()
         {
             Program.reservationslist.flowLayoutPanel1.Controls.Clear();
-            OracleCommand cmd = new OracleCommand("SELECT reservation_id FROM pending_reservations", Program.conn);
+            OracleCommand cmd = new OracleCommand("SELECT res_id FROM reservations", Program.conn);
             OracleDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -46,6 +46,7 @@ namespace Hotel_Booking_System
                 obj.num_of_beds_txt.Text = obj.reservation.room.no_of_beds.ToString();
                 obj.Description = obj.reservation.room.description;
                 obj.View = obj.reservation.room.view;
+                obj.Photo = Image.FromFile(obj.reservation.room.photo);
                 OracleCommand cmd2 = new OracleCommand("calculate_price", Program.conn);
                 cmd2.CommandType = CommandType.StoredProcedure;
                 cmd2.Parameters.Add("room_no", obj.reservation.room.room_no.ToString());
@@ -119,7 +120,8 @@ namespace Hotel_Booking_System
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Program.reservationslist.edit_panel.Hide();
+            Fill();
         }
 
         private void signup_submit_Click(object sender, EventArgs e)
@@ -129,6 +131,7 @@ namespace Hotel_Booking_System
                     y = CultureInfo.CurrentCulture.DateTimeFormat.GetAbbreviatedMonthName(Program.reservationslist.dateTimePicker2.Value.Month).ToUpper();
             start_date = Program.reservationslist.dateTimePicker1.Value.Day.ToString() + "-" + x + "-" + Program.reservationslist.dateTimePicker1.Value.Year.ToString();
             end_date = Program.reservationslist.dateTimePicker2.Value.Day.ToString() + "-" + y + "-" + Program.reservationslist.dateTimePicker2.Value.Year.ToString();
+            
             if(selectedReservation.update(start_date, end_date))
             {
                 MessageBox.Show("Your reservation updated seccessfully");
@@ -139,6 +142,16 @@ namespace Hotel_Booking_System
             {
                 MessageBox.Show("Please, try again");
             }
+        }
+
+        private void reservationsList_Shown(object sender, EventArgs e)
+        {
+            Fill();
+        }
+
+        private void reservationsList_VisibleChanged(object sender, EventArgs e)
+        {
+            Fill();
         }
     }
 }

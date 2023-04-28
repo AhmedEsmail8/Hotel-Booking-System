@@ -35,3 +35,8 @@ D:\SW_project\Hotel-Booking-System\Hotel Booking System\obj\Debug\Hotel_Booking_
 D:\SW_project\Hotel-Booking-System\Hotel Booking System\obj\Debug\Hotel_Booking_System.receptionistHome.resources
 D:\SW_project\Hotel-Booking-System\Hotel Booking System\obj\Debug\Hotel_Booking_System.reservationItem.resources
 D:\SW_project\Hotel-Booking-System\Hotel Booking System\obj\Debug\Hotel_Booking_System.Reservations.resources
+D:\Projects\Software\Hotel Booking System\Hotel Booking System\obj\Debug\Hotel_Booking_System.receptionAddRooms.resources
+D:\Projects\Software\Hotel Booking System\Hotel Booking System\obj\Debug\Hotel_Booking_System.receptionEditRooms.resources
+D:\Projects\Software\Hotel Booking System\Hotel Booking System\obj\Debug\Hotel_Booking_System.receptionistHome.resources
+D:\Projects\Software\Hotel Booking System\Hotel Booking System\obj\Debug\Hotel_Booking_System.reservationItem.resources
+D:\Projects\Software\Hotel Booking System\Hotel Booking System\obj\Debug\Hotel_Booking_System.Reservations.resources

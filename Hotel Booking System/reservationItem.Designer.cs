@@ -257,10 +257,10 @@ namespace Hotel_Booking_System
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label reservationid;
-        private System.Windows.Forms.Label startDate;
-        private System.Windows.Forms.Label endDate;
-        private System.Windows.Forms.Label paymethod;
+        public System.Windows.Forms.Label startDate;
+        public System.Windows.Forms.Label endDate;
+        public System.Windows.Forms.Label paymethod;
         public System.Windows.Forms.Label gestid;
-        private System.Windows.Forms.Label roomnumber;
+        public System.Windows.Forms.Label roomnumber;
     }
 }
