@@ -54,16 +54,16 @@ namespace Hotel_Booking_System
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightGray;
-            this.panel1.Location = new System.Drawing.Point(44, 528);
+            this.panel1.Location = new System.Drawing.Point(38, 528);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1832, 3);
+            this.panel1.Size = new System.Drawing.Size(1603, 3);
             this.panel1.TabIndex = 16;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(586, 302);
+            this.label3.Location = new System.Drawing.Point(543, 302);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 29);
             this.label3.TabIndex = 14;
@@ -74,7 +74,7 @@ namespace Hotel_Booking_System
             // 
             this.num_of_beds_txt.AutoSize = true;
             this.num_of_beds_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.num_of_beds_txt.Location = new System.Drawing.Point(525, 243);
+            this.num_of_beds_txt.Location = new System.Drawing.Point(459, 243);
             this.num_of_beds_txt.Name = "num_of_beds_txt";
             this.num_of_beds_txt.Size = new System.Drawing.Size(27, 29);
             this.num_of_beds_txt.TabIndex = 13;
@@ -84,7 +84,7 @@ namespace Hotel_Booking_System
             // 
             this.num_of_beds_lbl.AutoSize = true;
             this.num_of_beds_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.num_of_beds_lbl.Location = new System.Drawing.Point(311, 246);
+            this.num_of_beds_lbl.Location = new System.Drawing.Point(272, 246);
             this.num_of_beds_lbl.Name = "num_of_beds_lbl";
             this.num_of_beds_lbl.Size = new System.Drawing.Size(195, 26);
             this.num_of_beds_lbl.TabIndex = 12;
@@ -94,9 +94,9 @@ namespace Hotel_Booking_System
             // 
             this.view.AutoEllipsis = true;
             this.view.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.view.Location = new System.Drawing.Point(308, 23);
+            this.view.Location = new System.Drawing.Point(270, 23);
             this.view.Name = "view";
-            this.view.Size = new System.Drawing.Size(1093, 44);
+            this.view.Size = new System.Drawing.Size(956, 44);
             this.view.TabIndex = 10;
             this.view.Text = "Over looking the sea";
             // 
@@ -104,18 +104,18 @@ namespace Hotel_Booking_System
             // 
             this.description.AutoEllipsis = true;
             this.description.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.description.Location = new System.Drawing.Point(311, 82);
+            this.description.Location = new System.Drawing.Point(272, 82);
             this.description.Name = "description";
-            this.description.Size = new System.Drawing.Size(1475, 103);
+            this.description.Size = new System.Drawing.Size(1291, 103);
             this.description.TabIndex = 11;
             this.description.Text = resources.GetString("description.Text");
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(48, 25);
+            this.pictureBox1.Location = new System.Drawing.Point(42, 25);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(218, 188);
+            this.pictureBox1.Size = new System.Drawing.Size(191, 188);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
@@ -124,7 +124,7 @@ namespace Hotel_Booking_System
             // 
             this.total_price.AutoSize = true;
             this.total_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.total_price.Location = new System.Drawing.Point(525, 302);
+            this.total_price.Location = new System.Drawing.Point(459, 302);
             this.total_price.Name = "total_price";
             this.total_price.Size = new System.Drawing.Size(55, 29);
             this.total_price.TabIndex = 17;
@@ -135,7 +135,7 @@ namespace Hotel_Booking_System
             // 
             this.start_date_txt.AutoSize = true;
             this.start_date_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.start_date_txt.Location = new System.Drawing.Point(525, 189);
+            this.start_date_txt.Location = new System.Drawing.Point(459, 189);
             this.start_date_txt.Name = "start_date_txt";
             this.start_date_txt.Size = new System.Drawing.Size(125, 29);
             this.start_date_txt.TabIndex = 19;
@@ -145,7 +145,7 @@ namespace Hotel_Booking_System
             // 
             this.start_date_lbl.AutoSize = true;
             this.start_date_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.start_date_lbl.Location = new System.Drawing.Point(311, 189);
+            this.start_date_lbl.Location = new System.Drawing.Point(272, 189);
             this.start_date_lbl.Name = "start_date_lbl";
             this.start_date_lbl.Size = new System.Drawing.Size(127, 26);
             this.start_date_lbl.TabIndex = 18;
@@ -155,7 +155,7 @@ namespace Hotel_Booking_System
             // 
             this.end_date_txt.AutoSize = true;
             this.end_date_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.end_date_txt.Location = new System.Drawing.Point(1276, 186);
+            this.end_date_txt.Location = new System.Drawing.Point(1116, 186);
             this.end_date_txt.Name = "end_date_txt";
             this.end_date_txt.Size = new System.Drawing.Size(125, 29);
             this.end_date_txt.TabIndex = 21;
@@ -165,7 +165,7 @@ namespace Hotel_Booking_System
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1086, 189);
+            this.label2.Location = new System.Drawing.Point(950, 189);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(118, 26);
             this.label2.TabIndex = 20;
@@ -175,7 +175,7 @@ namespace Hotel_Booking_System
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(311, 305);
+            this.label5.Location = new System.Drawing.Point(272, 305);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(133, 26);
             this.label5.TabIndex = 22;
@@ -185,7 +185,7 @@ namespace Hotel_Booking_System
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(311, 368);
+            this.label6.Location = new System.Drawing.Point(272, 368);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(125, 26);
             this.label6.TabIndex = 23;
@@ -195,7 +195,7 @@ namespace Hotel_Booking_System
             // 
             this.response.AutoSize = true;
             this.response.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.response.Location = new System.Drawing.Point(525, 365);
+            this.response.Location = new System.Drawing.Point(459, 365);
             this.response.Name = "response";
             this.response.Size = new System.Drawing.Size(650, 29);
             this.response.TabIndex = 24;
@@ -209,9 +209,9 @@ namespace Hotel_Booking_System
             this.cancel_reservation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancel_reservation.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancel_reservation.ForeColor = System.Drawing.Color.White;
-            this.cancel_reservation.Location = new System.Drawing.Point(1281, 461);
+            this.cancel_reservation.Location = new System.Drawing.Point(1121, 461);
             this.cancel_reservation.Name = "cancel_reservation";
-            this.cancel_reservation.Size = new System.Drawing.Size(287, 39);
+            this.cancel_reservation.Size = new System.Drawing.Size(251, 39);
             this.cancel_reservation.TabIndex = 25;
             this.cancel_reservation.Text = "Cancel Reservation";
             this.cancel_reservation.UseVisualStyleBackColor = false;
@@ -225,9 +225,9 @@ namespace Hotel_Booking_System
             this.edit_reservation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.edit_reservation.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.edit_reservation.ForeColor = System.Drawing.Color.White;
-            this.edit_reservation.Location = new System.Drawing.Point(786, 461);
+            this.edit_reservation.Location = new System.Drawing.Point(688, 461);
             this.edit_reservation.Name = "edit_reservation";
-            this.edit_reservation.Size = new System.Drawing.Size(287, 39);
+            this.edit_reservation.Size = new System.Drawing.Size(251, 39);
             this.edit_reservation.TabIndex = 26;
             this.edit_reservation.Text = "Edit Reservation";
             this.edit_reservation.UseVisualStyleBackColor = false;
@@ -241,16 +241,16 @@ namespace Hotel_Booking_System
             this.ok_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ok_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ok_btn.ForeColor = System.Drawing.Color.White;
-            this.ok_btn.Location = new System.Drawing.Point(316, 461);
+            this.ok_btn.Location = new System.Drawing.Point(276, 461);
             this.ok_btn.Name = "ok_btn";
-            this.ok_btn.Size = new System.Drawing.Size(287, 39);
+            this.ok_btn.Size = new System.Drawing.Size(251, 39);
             this.ok_btn.TabIndex = 27;
             this.ok_btn.Text = "OK";
             this.ok_btn.UseVisualStyleBackColor = false;
             // 
             // notification
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.ok_btn);
             this.Controls.Add(this.edit_reservation);
@@ -271,7 +271,7 @@ namespace Hotel_Booking_System
             this.Controls.Add(this.description);
             this.Controls.Add(this.pictureBox1);
             this.Name = "notification";
-            this.Size = new System.Drawing.Size(1819, 541);
+            this.Size = new System.Drawing.Size(1592, 541);
             this.Load += new System.EventHandler(this.notification_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

@@ -99,7 +99,8 @@ namespace Hotel_Booking_System
 
         private void cancel_reservation_Click(object sender, EventArgs e)
         {
-            
+            reservation.delete();
+            Program.reservationslist.Fill();
         }
 
         private void notification_Load(object sender, EventArgs e)
@@ -111,6 +112,7 @@ namespace Hotel_Booking_System
         {
             Program.reservationslist.flowLayoutPanel1.Controls.Clear();
             Program.reservationslist.edit_panel.Show();
+            Program.reservationslist.selectedReservation = this.reservation;
         }
     }
 }

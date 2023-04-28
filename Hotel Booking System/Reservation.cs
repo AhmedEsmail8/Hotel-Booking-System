@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,8 +36,11 @@ namespace Hotel_Booking_System
             if (dr.Read())
             {
                 this.res_id = res_id;
-                start_date = dr[1].ToString();
-                end_date = dr[2].ToString();
+                DateTime start = dr.GetDateTime(1), end = dr.GetDateTime(2);
+                string x = CultureInfo.CurrentCulture.DateTimeFormat.GetAbbreviatedMonthName(start.Month).ToUpper(),
+                    y = CultureInfo.CurrentCulture.DateTimeFormat.GetAbbreviatedMonthName(end.Month).ToUpper();
+                start_date = start.Day.ToString() + "-" + x + "-" + start.Year.ToString();
+                end_date = end.Day.ToString() + "-" + y + "-" + end.Year.ToString();
                 payment_method = dr[3].ToString();
                 room_no = dr[4].ToString();
                 guest = new User(dr[5].ToString());
@@ -65,7 +69,7 @@ namespace Hotel_Booking_System
         {
             try
             {
-                OracleCommand cmd = new OracleCommand("UDATE reservations SET start_date = :st, end_date = :end WHERE res_id = :id", Program.conn);
+                OracleCommand cmd = new OracleCommand("UPDATE reservations SET start_date = :st, end_date = :end WHERE res_id = :id", Program.conn);
                 cmd.Parameters.Add("st", start_date);
                 cmd.Parameters.Add("end", end_date);
                 cmd.Parameters.Add("id", res_id);
@@ -80,6 +84,19 @@ namespace Hotel_Booking_System
             this.start_date = start_date;
             this.end_date = end_date;
             return true;
+        }
+
+        public void delete()
+        {
+            OracleCommand cmd = new OracleCommand("DELETE FROM credit_cards WHERE res_id = :id", Program.conn);
+            OracleCommand cmd2 = new OracleCommand("DELETE FROM pending_reservations WHERE reservation_id = :id", Program.conn);
+            OracleCommand cmd3 = new OracleCommand("DELETE FROM reservations WHERE res_id = :id", Program.conn);
+            cmd.Parameters.Add("id", res_id);
+            cmd2.Parameters.Add("id", res_id);
+            cmd3.Parameters.Add("id", res_id);
+            cmd.ExecuteNonQuery();
+            cmd2.ExecuteNonQuery();
+            cmd3.ExecuteNonQuery();
         }
     }
 }

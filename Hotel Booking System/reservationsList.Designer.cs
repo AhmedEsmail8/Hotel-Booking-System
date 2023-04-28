@@ -288,6 +288,7 @@ namespace Hotel_Booking_System
             this.signup_submit.TabIndex = 6;
             this.signup_submit.Text = "Edit";
             this.signup_submit.UseVisualStyleBackColor = false;
+            this.signup_submit.Click += new System.EventHandler(this.signup_submit_Click);
             // 
             // last_name_label
             // 

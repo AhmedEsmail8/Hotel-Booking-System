@@ -108,6 +108,7 @@ namespace Hotel_Booking_System
             Hide();
             Program.sign_in.Show();
             sideBar.Hide();
+            pictureBox2.Show();
         }
 
         private void Account_info_Click(object sender, EventArgs e)
@@ -115,6 +116,7 @@ namespace Hotel_Booking_System
             Hide();
             Program.editUserInfo.Show();
             sideBar.Hide();
+            pictureBox2.Show();
         }
 
         private void register_label_Click(object sender, EventArgs e)
@@ -183,6 +185,7 @@ namespace Hotel_Booking_System
             Hide();
             Program.reservationslist.Show();
             sideBar.Hide();
+            pictureBox2.Show();
         }
 
         private void Search_sideBar_Click(object sender, EventArgs e)
