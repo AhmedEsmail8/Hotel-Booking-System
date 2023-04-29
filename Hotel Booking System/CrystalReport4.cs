@@ -16,14 +16,14 @@ namespace Hotel_Booking_System {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class CrystalReport2 : ReportClass {
+    public class CrystalReport4 : ReportClass {
         
-        public CrystalReport2() {
+        public CrystalReport4() {
         }
         
         public override string ResourceName {
             get {
-                return "CrystalReport2.rpt";
+                return "CrystalReport4.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Hotel_Booking_System {
         
         public override string FullResourceName {
             get {
-                return "Hotel_Booking_System.CrystalReport2.rpt";
+                return "Hotel_Booking_System.CrystalReport4.rpt";
             }
             set {
                 // Do nothing
@@ -130,9 +130,9 @@ namespace Hotel_Booking_System {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedCrystalReport2 : Component, ICachedReport {
+    public class CachedCrystalReport4 : Component, ICachedReport {
         
-        public CachedCrystalReport2() {
+        public CachedCrystalReport4() {
         }
         
         [Browsable(false)]
@@ -169,7 +169,7 @@ namespace Hotel_Booking_System {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            CrystalReport2 rpt = new CrystalReport2();
+            CrystalReport4 rpt = new CrystalReport4();
             rpt.Site = this.Site;
             return rpt;
         }

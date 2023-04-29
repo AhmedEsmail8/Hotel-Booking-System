@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WindowsFormsApp1{
+namespace Hotel_Booking_System {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;

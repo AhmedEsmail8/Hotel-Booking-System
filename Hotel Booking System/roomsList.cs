@@ -59,7 +59,6 @@ namespace Hotel_Booking_System
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ParentForm.Hide();
             string x = CultureInfo.CurrentCulture.DateTimeFormat.GetAbbreviatedMonthName(Program.home.check_in_date.Value.Month).ToUpper(), y = CultureInfo.CurrentCulture.DateTimeFormat.GetAbbreviatedMonthName(Program.home.check_out_date.Value.Month).ToUpper();
             string start_date = Program.home.check_in_date.Value.Day.ToString() + "-" + x + "-" + Program.home.check_in_date.Value.Year.ToString();
             string end_date = Program.home.check_out_date.Value.Day.ToString() + "-" + y + "-" + Program.home.check_out_date.Value.Year.ToString();
@@ -68,6 +67,7 @@ namespace Hotel_Booking_System
             Program.reservation.guest = Program.user;
             Program.reservation.room_no = room_no;
             Program.payment.handle();
+            ParentForm.Hide();
             Program.payment.Show();
         }
     }

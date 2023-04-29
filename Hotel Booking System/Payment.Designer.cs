@@ -341,7 +341,7 @@ namespace Hotel_Booking_System
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label view_label;
+        public System.Windows.Forms.Label view_label;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label checkin_date;
         private System.Windows.Forms.Label checout_date_txt;

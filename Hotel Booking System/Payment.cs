@@ -64,6 +64,7 @@ namespace Hotel_Booking_System
             price.Text = sb.ToString();
             price.Parent = pictureBox1;
             price.BackColor = Color.Transparent;
+            
             view_label.Text = Program.home.comboBox1.SelectedItem.ToString();
         }
 
@@ -84,7 +85,7 @@ namespace Hotel_Booking_System
             label8.Parent = pictureBox1;
             label8.BackColor = Color.Transparent;
 
-            handle();
+            //handle();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

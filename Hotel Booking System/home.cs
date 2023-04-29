@@ -136,6 +136,9 @@ namespace Hotel_Booking_System
                     MessageBox.Show("Please, enter valid data.");
                     return;
                 }
+                //Console.WriteLine(min_price_txt.Text + "   " + max_price_txt.Text);
+                //Console.WriteLine(start_date + "   " + end_date);
+                //Console.WriteLine(textBox3.Text + "   " + comboBox1.SelectedItem.ToString());
                 List<Room> rooms = Room.search(Int32.Parse(min_price_txt.Text).ToString(), Int32.Parse(max_price_txt.Text).ToString(), start_date, end_date, textBox3.Text, comboBox1.SelectedItem.ToString());
                 if (rooms == null)
                 {
@@ -191,6 +194,24 @@ namespace Hotel_Booking_System
         private void Search_sideBar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void home_VisibleChanged(object sender, EventArgs e)
+        {
+            comboBox1.Items.Clear();
+            OracleCommand cmd = new OracleCommand("SELECT DISTINCT room_view FROM rooms", Program.conn);
+            OracleDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+                comboBox1.Items.Add(dr[0].ToString());
+        }
+
+        private void home_Shown(object sender, EventArgs e)
+        {
+            comboBox1.Items.Clear();
+            OracleCommand cmd = new OracleCommand("SELECT DISTINCT room_view FROM rooms", Program.conn);
+            OracleDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+                comboBox1.Items.Add(dr[0].ToString());
         }
     }
 }

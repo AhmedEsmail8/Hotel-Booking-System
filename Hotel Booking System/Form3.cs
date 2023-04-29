@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CrystalDecisions.Shared;
+using Hotel_Booking_System;
 
 namespace WindowsFormsApp1
 {
