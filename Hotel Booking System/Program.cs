@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oracle.DataAccess.Client;
 using Oracle.DataAccess.Types;
+using WindowsFormsApp1;
 
 namespace Hotel_Booking_System
 {
@@ -13,7 +14,7 @@ namespace Hotel_Booking_System
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
-        public static Form1 sign_in;
+        public static Login sign_in;
         //client
         public static User user;
         public static OracleConnection conn;
@@ -29,6 +30,9 @@ namespace Hotel_Booking_System
         public static receptionistHome receptionisthome;
         public static reservationItem reservationitem;
         public static Reservations receptionistreservations;
+        public static Form1 report1;
+        public static Form2 report2;
+        public static Form3 report3;
 
         [STAThread]
         
@@ -39,7 +43,7 @@ namespace Hotel_Booking_System
             conn.Open();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            sign_in = new Form1();
+            sign_in = new Login();
             
             //client
             reservation = new Reservation();
@@ -54,6 +58,9 @@ namespace Hotel_Booking_System
             receptionisthome = new receptionistHome();
             reservationitem = new reservationItem();
             receptionistreservations = new Reservations();
+            report1 = new Form1();
+            report2 = new Form2();
+            report3 = new Form3();
 
             Application.Run(sign_in);
         }
