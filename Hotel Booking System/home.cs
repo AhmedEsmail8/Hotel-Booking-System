@@ -203,6 +203,10 @@ namespace Hotel_Booking_System
             OracleDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
                 comboBox1.Items.Add(dr[0].ToString());
+            flowLayoutPanel1.Controls.Clear();
+            min_price_txt.Text = "";
+            max_price_txt.Text = "";
+            textBox3.Text = "";
         }
 
         private void home_Shown(object sender, EventArgs e)

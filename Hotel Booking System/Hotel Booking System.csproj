@@ -62,18 +62,6 @@
       <DependentUpon>CrystalReport1.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CrystalReport2.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport2.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="CrystalReport3.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport3.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="CrystalReport4.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -85,12 +73,6 @@
     </Compile>
     <Compile Include="EditUserInfo.Designer.cs">
       <DependentUpon>EditUserInfo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
@@ -185,23 +167,12 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrystalReport2.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport2.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CrystalReport3.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport3.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="CrystalReport4.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport4.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="EditUserInfo.resx">
       <DependentUpon>EditUserInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>

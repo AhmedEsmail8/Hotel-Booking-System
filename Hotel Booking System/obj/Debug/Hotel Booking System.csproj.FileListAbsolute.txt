@@ -55,7 +55,6 @@ D:\Projects\Software\Hotel Booking System\Hotel Booking System\bin\Debug\Crystal
 D:\Projects\Software\Hotel Booking System\Hotel Booking System\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 D:\Projects\Software\Hotel Booking System\Hotel Booking System\bin\Debug\stdole.dll
 D:\Projects\Software\Hotel Booking System\Hotel Booking System\obj\Debug\Hotel_Booking_System.Login.resources
-D:\Projects\Software\Hotel Booking System\Hotel Booking System\obj\Debug\WindowsFormsApp1.Form1.resources
 D:\Projects\Software\Hotel Booking System\Hotel Booking System\obj\Debug\WindowsFormsApp1.Form2.resources
 D:\Projects\Software\Hotel Booking System\Hotel Booking System\bin\Debug\CrystalDecisions.Windows.Forms.dll
 D:\Projects\Software\Hotel Booking System\Hotel Booking System\obj\Debug\WindowsFormsApp1.Form3.resources

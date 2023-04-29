@@ -120,5 +120,16 @@ namespace Hotel_Booking_System
         {
             System.Windows.Forms.Application.Exit();
         }
+
+        private void Login_VisibleChanged(object sender, EventArgs e)
+        {
+            f_name_box.Text = "";
+            l_name_box.Text = "";
+            email_box.Text = "";
+            pass_box.Text = "";
+            ssn_box.Text = "";
+            email_box2.Text = "";
+            pass_box2.Text = "";
+        }
     }
 }

@@ -31,7 +31,7 @@ namespace Hotel_Booking_System
         public static receptionistHome receptionisthome;
         public static reservationItem reservationitem;
         public static Reservations receptionistreservations;
-        public static Form1 report1;
+        //public static Form1 report1;
         public static Form2 report2;
         public static Form3 report3;
 
@@ -59,11 +59,11 @@ namespace Hotel_Booking_System
             receptionisthome = new receptionistHome();
             reservationitem = new reservationItem();
             receptionistreservations = new Reservations();
-            report1 = new Form1();
+            //report1 = new Form1();
             report2 = new Form2();
             report3 = new Form3();
 
-            Application.Run(sign_in);
+            Application.Run(report2);
         }
     }
 }

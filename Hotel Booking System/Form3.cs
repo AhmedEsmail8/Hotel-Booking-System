@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,7 @@ namespace WindowsFormsApp1
 {
     public partial class Form3 : Form
     {
-        CrystalReport3 crys;
+        CrystalReport1 crys;
         public Form3()
         {
             InitializeComponent();
@@ -22,17 +23,17 @@ namespace WindowsFormsApp1
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            crys = new CrystalReport3();
-            foreach (ParameterDiscreteValue v in crys.ParameterFields[0].DefaultValues)
-                comboBox1.Items.Add(v.Value);
+            crys = new CrystalReport1();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            crys.SetParameterValue(0, comboBox1.Text);
-            crys.SetParameterValue(1, Convert.ToDateTime ( textBox1.Text));
-            crys.SetParameterValue(2, Convert.ToDateTime ( textBox2.Text));
-
+            string x = CultureInfo.CurrentCulture.DateTimeFormat.GetAbbreviatedMonthName(dateTimePicker1.Value.Month).ToUpper(), y = CultureInfo.CurrentCulture.DateTimeFormat.GetAbbreviatedMonthName(dateTimePicker2.Value.Month).ToUpper();
+            string start_date = dateTimePicker1.Value.Day.ToString() + "-" + x + "-" + dateTimePicker1.Value.Year.ToString();
+            string end_date = dateTimePicker2.Value.Day.ToString() + "-" + y + "-" + dateTimePicker2.Value.Year.ToString();
+            crys.SetParameterValue(0, Convert.ToDateTime(start_date));
+            crys.SetParameterValue(1, Convert.ToDateTime(end_date));
             crystalReportViewer1.ReportSource = crys;
         }
     }

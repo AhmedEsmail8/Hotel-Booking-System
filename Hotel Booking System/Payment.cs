@@ -104,7 +104,7 @@ namespace Hotel_Booking_System
             {
                 if (radioButton1.Checked)
                 {
-                    if (textBox1.Text.Length == 0 || textBox2.Text.Length == 0)
+                    if (textBox1.Text.Length != 16 || textBox2.Text.Length != 3)
                     {
                         MessageBox.Show("Please, enter valid data.");
                         return;
@@ -135,12 +135,12 @@ namespace Hotel_Booking_System
                     Program.home.Show();
                 }
                 Program.reservationslist.Fill();
+                Program.reservation = new Reservation();
             }
             catch(Exception ex)
             {
                 MessageBox.Show("There is a problem, please try again   "+ex.Message);
             }
-            //Program.reservation.save();
         }
 
         private void button2_Click(object sender, EventArgs e)

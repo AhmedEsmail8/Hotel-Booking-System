@@ -400,7 +400,7 @@ namespace Hotel_Booking_System
             this.label5.Size = new System.Drawing.Size(0, 17);
             this.label5.TabIndex = 0;
             // 
-            // Form1
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -416,12 +416,13 @@ namespace Hotel_Booking_System
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "Login";
             this.Text = "Book My Stay\n";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load_1);
             this.SizeChanged += new System.EventHandler(this.Form1_SizeChanged);
+            this.VisibleChanged += new System.EventHandler(this.Login_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.login_panel.ResumeLayout(false);
             this.login_panel.PerformLayout();

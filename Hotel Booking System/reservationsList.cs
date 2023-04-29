@@ -28,8 +28,6 @@ namespace Hotel_Booking_System
 
             //edit_panel.Parent = this;
             //edit_panel.BackColor = Color.FromArgb(100, Color.Black);
-
-            Fill();
         }
 
         public void Fill()
@@ -146,7 +144,7 @@ namespace Hotel_Booking_System
 
         private void reservationsList_Shown(object sender, EventArgs e)
         {
-            Fill();
+            
         }
 
         private void reservationsList_VisibleChanged(object sender, EventArgs e)

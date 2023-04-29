@@ -161,5 +161,18 @@ namespace Hotel_Booking_System
             Hide();
             Program.reservationslist.Show();
         }
+
+        private void EditUserInfo_VisibleChanged(object sender, EventArgs e)
+        {
+            isPass = true;
+            SSN_txt.Text = Program.user.ssn;
+            f_name_txt.Text = Program.user.f_name;
+            l_name_txt.Text = Program.user.l_name;
+            email_txt.Text = Program.user.email;
+            phone_number_txt.Text = Program.user.phone_number;
+            password_txt.Text = Program.user.password;
+            roundedPictureBox1.ImageLocation = Program.user.photo.Replace('\\', '/');
+            password_txt.UseSystemPasswordChar = true;
+        }
     }
 }
