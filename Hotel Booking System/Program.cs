@@ -15,6 +15,7 @@ namespace Hotel_Booking_System
         /// The main entry point for the application.
         /// </summary>
         public static Login sign_in;
+
         //client
         public static User user;
         public static OracleConnection conn;
