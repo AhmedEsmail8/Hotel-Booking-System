@@ -22,7 +22,7 @@ namespace Hotel_Booking_System
         private void Reservations_Load(object sender, EventArgs e)
         {
 
-            menubar.Hide();
+            sideBar.Hide();
             Fill();
         }
 
@@ -54,7 +54,7 @@ namespace Hotel_Booking_System
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             menubutton.Hide();
-            menubar.Show();
+            sideBar.Show();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -64,22 +64,24 @@ namespace Hotel_Booking_System
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            menubar.Hide();
+            sideBar.Hide();
             menubutton.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            receptionEditRooms obj = new receptionEditRooms();
-            obj.Show();
-            this.Hide();
+            Hide();
+            Program.editrooms.Show();
+            sideBar.Hide();
+            menubutton.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            receptionAddRooms obj = new receptionAddRooms();
-            obj.Show();
-            this.Hide();
+            Hide();
+            Program.addrooms.Show();
+            sideBar.Hide();
+            menubutton.Show();
         }
 
         private void reservationspagebutton_Click(object sender, EventArgs e)
@@ -89,9 +91,10 @@ namespace Hotel_Booking_System
 
         private void editadminpagebutton_Click(object sender, EventArgs e)
         {
-            receptionistHome obj = new receptionistHome();
-            obj.Show();
-            this.Hide();
+            Hide();
+            Program.receptionisthome.Show();
+            sideBar.Hide();
+            menubutton.Show();
         }
 
         private void Reservations_FormClosed(object sender, FormClosedEventArgs e)
@@ -107,6 +110,30 @@ namespace Hotel_Booking_System
         private void Reservations_Shown(object sender, EventArgs e)
         {
             Fill();
+        }
+
+        private void offers_report_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Program.report2.Show();
+            sideBar.Hide();
+            menubutton.Show();
+        }
+
+        private void reservations_report_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Program.report3.Show();
+            sideBar.Hide();
+            menubutton.Show();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Hide();
+            Program.sign_in.Show();
+            sideBar.Hide();
+            menubutton.Show();
         }
     }
 }

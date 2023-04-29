@@ -63,7 +63,7 @@ namespace Hotel_Booking_System
             report2 = new Form2();
             report3 = new Form3();
 
-            Application.Run(report2);
+            Application.Run(sign_in);
         }
     }
 }

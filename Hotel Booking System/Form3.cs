@@ -36,5 +36,26 @@ namespace WindowsFormsApp1
             crys.SetParameterValue(1, Convert.ToDateTime(end_date));
             crystalReportViewer1.ReportSource = crys;
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Program.receptionisthome.Show();
+        }
+
+        private void Form3_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Program.sign_in.Close();
+        }
     }
 }

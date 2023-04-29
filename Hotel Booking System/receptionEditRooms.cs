@@ -47,16 +47,18 @@ namespace Hotel_Booking_System
 
         private void reservationspagebutton_Click(object sender, EventArgs e)
         {
-            Reservations obj = new Reservations();
-            obj.Show();
-            this.Hide();
+            Hide();
+            Program.receptionistreservations.Show();
+            sideBar.Hide();
+            menubutton.Show();
         }
 
         private void addroompagebuttin_Click(object sender, EventArgs e)
         {
-            receptionAddRooms obj = new receptionAddRooms();
-            obj.Show();
-            this.Hide();
+            Hide();
+            Program.addrooms.Show();
+            sideBar.Hide();
+            menubutton.Show();
         }
 
         private void editRoompagebutton_Click(object sender, EventArgs e)
@@ -66,9 +68,10 @@ namespace Hotel_Booking_System
 
         private void editadminpagebutton_Click(object sender, EventArgs e)
         {
-            receptionistHome obj = new receptionistHome();
-            obj.Show();
-            this.Hide();
+            Hide();
+            Program.receptionisthome.Show();
+            sideBar.Hide();
+            menubutton.Show();
         }
 
         private void import_Click(object sender, EventArgs e)
@@ -124,52 +127,61 @@ namespace Hotel_Booking_System
 
         private void button1_Click(object sender, EventArgs e)
         {
-            bedstextBox.Enabled = true;
-            desctextBox.Enabled = true;
-            pricetextBox.Enabled = true;
-            comboBox1.Enabled = true;
-            pictureBox3.Enabled = true;
-            pictureBox4.Enabled = true;
-            editroom.Enabled = true;
-            radioButton1.Enabled = true;
-            radioButton2.Enabled = true;
-            string conn = "Data Source=orcl;User Id=scott;Password=tiger";
-            string comstr = "SELECT * FROM ROOMS WHERE ROOM_NO=:room_no";
-            adapter = new OracleDataAdapter(comstr, conn);
-            adapter.SelectCommand.Parameters.Add("room_no", roomnumbertextBox.Text);
-            ds = new DataSet();
-            adapter.Fill(ds);
-            desctextBox.Text = ds.Tables[0].Rows[0]["description"].ToString();
-            bedstextBox.Text = ds.Tables[0].Rows[0]["no_of_beds"].ToString();
-            pricetextBox.Text = ds.Tables[0].Rows[0]["price_per_night"].ToString();
-            comboBox1.Text = ds.Tables[0].Rows[0]["room_view"].ToString();
+            try
+            {                
+                string conn = "Data Source=orcl;User Id=scott;Password=tiger";
+                string comstr = "SELECT * FROM ROOMS WHERE ROOM_NO=:room_no";
+                adapter = new OracleDataAdapter(comstr, conn);
+                adapter.SelectCommand.Parameters.Add("room_no", roomnumbertextBox.Text);
+                ds = new DataSet();
+                adapter.Fill(ds);
+                desctextBox.Text = ds.Tables[0].Rows[0]["description"].ToString();
+                bedstextBox.Text = ds.Tables[0].Rows[0]["no_of_beds"].ToString();
+                pricetextBox.Text = ds.Tables[0].Rows[0]["price_per_night"].ToString();
+                comboBox1.Text = ds.Tables[0].Rows[0]["room_view"].ToString();
 
-            OracleCommand cmd = new OracleCommand("SELECT DISTINCT room_view FROM rooms", Program.conn);
-            OracleDataReader dr = cmd.ExecuteReader();
-            comboBox1.Items.Clear();
-            while (dr.Read())
-                comboBox1.Items.Add(dr[0].ToString());
+                OracleCommand cmd = new OracleCommand("SELECT DISTINCT room_view FROM rooms", Program.conn);
+                OracleDataReader dr = cmd.ExecuteReader();
+                comboBox1.Items.Clear();
+                while (dr.Read())
+                    comboBox1.Items.Add(dr[0].ToString());
 
-            string availablity = ds.Tables[0].Rows[0]["available"].ToString().Replace("\\", "/");
-            if (availablity == "yes")
-            {
-                radioButton1.Checked = true;
+                string availablity = ds.Tables[0].Rows[0]["available"].ToString().Replace("\\", "/");
+                if (availablity == "yes")
+                {
+                    radioButton1.Checked = true;
 
+                }
+                else if (availablity == "no")
+                {
+                    radioButton2.Checked = true;
+                }
+                string x = ds.Tables[0].Rows[0]["photo"].ToString();
+                Console.WriteLine(x);
+                Console.WriteLine(x.Length);
+                if (x.Length == 0)
+                {
+                    string workingDirectory = Environment.CurrentDirectory;
+                    string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
+                    x = projectDirectory.Replace('\\', '/') + "/Hotel Booking System/deafult_image.png";
+                }
+                pictureBox2.ImageLocation = x;
+                bedstextBox.Enabled = true;
+                desctextBox.Enabled = true;
+                pricetextBox.Enabled = true;
+                comboBox1.Enabled = true;
+                pictureBox3.Enabled = true;
+                pictureBox4.Enabled = true;
+                editroom.Enabled = true;
+                radioButton1.Enabled = true;
+                radioButton2.Enabled = true;
+                editroom.Enabled = true;
             }
-            else if (availablity == "no")
+            catch
             {
-                radioButton2.Checked = true;
+                MessageBox.Show("No room was found, please try another room number");
             }
-            string x = ds.Tables[0].Rows[0]["photo"].ToString();
-            Console.WriteLine(x);
-            Console.WriteLine(x.Length);
-            if (x.Length == 0)
-            {
-                string workingDirectory = Environment.CurrentDirectory;
-                string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
-                x = projectDirectory.Replace('\\', '/') + "/Hotel Booking System/deafult_image.png";
-            }
-            pictureBox2.ImageLocation = x;
+            
         }
 
         private void editroom_Click(object sender, EventArgs e)
@@ -229,6 +241,22 @@ namespace Hotel_Booking_System
         {
             Hide();
             Program.sign_in.Show();
+            sideBar.Hide();
+            menubutton.Show();
+        }
+
+        private void offers_report_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Program.report2.Show();
+            sideBar.Hide();
+            menubutton.Show();
+        }
+
+        private void reservations_report_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Program.report3.Show();
             sideBar.Hide();
             menubutton.Show();
         }

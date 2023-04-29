@@ -74,5 +74,21 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void Form2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Program.sign_in.Close();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Program.receptionisthome.Show();
+        }
     }
 }

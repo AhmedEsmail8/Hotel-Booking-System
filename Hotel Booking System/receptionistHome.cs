@@ -92,23 +92,26 @@ namespace Hotel_Booking_System
 
         private void reservationspagebutton_Click_1(object sender, EventArgs e)
         {
-            Reservations obj = new Reservations();
-            obj.Show();
-            this.Hide();
+            Hide();
+            Program.receptionistreservations.Show();
+            sideBar.Hide();
+            menubutton.Show();
         }
 
         private void addroompagebutton_Click(object sender, EventArgs e)
         {
-            receptionAddRooms obj = new receptionAddRooms();
-            obj.Show();
-            this.Hide();
+            Hide();
+            Program.addrooms.Show();
+            sideBar.Hide();
+            menubutton.Show();
         }
 
         private void editRoompagebutton_Click(object sender, EventArgs e)
         {
-            receptionEditRooms obj = new receptionEditRooms();
-            obj.Show();
-            this.Hide();
+            Hide();
+            Program.editrooms.Show();
+            sideBar.Hide();
+            menubutton.Show();
         }            
 
         private void button1_Click(object sender, EventArgs e)
@@ -163,6 +166,27 @@ namespace Hotel_Booking_System
         {
             Hide();
             Program.sign_in.Show();
+            sideBar.Hide();
+            menubutton.Show();
+        }
+
+        private void editadminpagebutton_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void offers_report_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Program.report2.Show();
+            sideBar.Hide();
+            menubutton.Show();
+        }
+
+        private void reservations_report_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Program.report3.Show();
             sideBar.Hide();
             menubutton.Show();
         }
